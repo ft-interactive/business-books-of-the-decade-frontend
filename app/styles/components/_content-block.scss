@@ -1,0 +1,11 @@
+
+// Offset the text
+@include mq(tablet) {
+  .content-block {
+    margin-left: span(1);
+    padding-left: $ft-grid-gutter-width * 2;
+  }
+  .content-block__headline {
+    margin-left: -1 * $ft-grid-gutter-width * 2;
+  }
+}

@@ -1,0 +1,162 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="oldie m-root no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="oldie m-root no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="oldie m-root no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-oldie m-root no-js"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--#include virtual="/inc/extras-head-1.html" -->
+
+        <!--
+            Serve a different stylesheet for IE8 :
+            http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8
+        -->
+        <!-- build:css({.tmp,app,.}) styles/main.css -->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <!--<![endif]-->
+        <!-- endbuild -->
+
+        <!-- build:css({.tmp,app,.}) styles/oldie.css -->
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="styles/oldie.css">
+        <![endif]-->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app,.}) scripts/top.js -->
+        <script src="scripts/vendor/modernizr.js"></script>
+        <!-- endbuild -->
+
+        <!--#include virtual="/inc/extras-head-2.html" -->
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <header class="header">
+            <div class="topbar">
+                <div class="container">
+                    <div class="header__logo"><a href="/" class="ft-logo"><span class="visuallyhidden">Financial Times</span></a></div>
+                <!-- burger icon -->
+                </div>
+            </div>
+            <h1 class="microsite-name">
+                Business books of the decade
+            </h1>
+        </header>
+        <div class="filter-bar">
+            <form class="searchform" action="/" method="get">
+                <div class="searchform-wrapper">
+                    <label for="search-label" class="visuallyhidden">
+                        Search for a book title or author
+                    </label>
+                    <input type="text" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+            <form action="/" method="get">
+                <div class="filterform-wrapper">
+                    <label for="filter">Filter by genre</label>
+                    <select name="f" id="filter">
+                        <option value="">Choose a genre</option>
+                    </select>
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+        </div>
+        <main>
+            <div class="container">
+                <div class="content-primary">
+                    <div class="book" itemscope itemtype="http://schema.org/Book">
+                        <div class="book__media">
+                            <img itemprop="image" src="/images/content/piketty.jpg" alt="" />
+                        </div>
+                        <h1 class="book__title" itemprop="name">The World is Flat: A Brief History of the Twenty-First Century</h1>
+                        <div class="book__byline">
+                            <a href="#" class="text-quiet" itemprop="author">Thomas L, Friedman</a>
+                        </div>
+                        <div class="book__prizes">
+                            <a href="#" class="text-quiet">
+                                <i class="badge badge--winner"></i>
+                                Winner 2005
+                            </a>
+                        </div>
+                        <div class="book__meta">
+                            <dl class="meta">
+                                <dt class="meta__title">Genres</dt>
+                                <dd class="meta__item text-quiet">
+                                    <a href="#" class="text-quiet" itemprop="genre">Trade</a>,
+                                </dd>
+                                <dd class="meta__item text-quiet">
+                                    <a href="#" class="text-quiet" itemprop="genre">globalisation</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="book__content">
+                            <div class="book__synopsis content-block">
+                                <h2 class="headline content-block__headline">Synopsis</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, animi, ipsa sunt sequi facilis voluptatibus vero aperiam quis obcaecati hic cupiditate impedit quidem. Molestias, officiis.</p>
+                                <p>Cupiditate, distinctio, ipsum, possimus voluptate ad ratione libero explicabo tempora commodi ipsa ullam iusto nostrum est labore culpa totam nulla voluptatibus vitae nesciunt iure blanditiis.</p>
+                                <p>Dolorem, minima, eius, velit pariatur molestiae libero optio tempora quisquam sed cum hic modi cupiditate adipisci dolores perferendis possimus quam quia iusto exercitationem nobis rerum!</p>
+                                <p>Accusamus, nam, modi, quibusdam, numquam hic pariatur repellendus quaerat suscipit doloribus ipsa aperiam reiciendis explicabo ab dolor repellat maxime esse harum delectus voluptatem ipsam id?</p>
+                                <p>Consequuntur, suscipit, rerum, culpa omnis exercitationem sunt adipisci optio autem expedita pariatur numquam nemo sapiente dolor hic quasi consequatur error beatae nesciunt recusandae eveniet libero.</p>
+                                <p>Suscipit, tempora, iste vitae odio reiciendis eligendi nam perferendis neque distinctio veniam voluptatem cumque a aspernatur molestiae quidem explicabo ea quod facilis illum alias harum!</p>
+                                <p>Corporis, laboriosam, perspiciatis eos eligendi nisi enim placeat possimus blanditiis minima voluptatem repellat ducimus quos assumenda molestias maiores! Neque, atque, ab accusamus quo officia eligendi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-secondary">
+                    <div class="browsebox">
+                        <div class="browsebox__header">
+                            <a href="#" class="fauxlink">
+                                <h2 class="text-uppercase text-small text-quiet">Others in <span class="fauxlink__target">trade</span></h2>
+                            </a>
+                        </div>
+                        <div class="browsebox__content">
+                            <ul class="shelf row-list">
+                                <li class="shelf__item">
+                                    <div class="promo" itemscope itemtype="http://schema.org/Book">
+                                        <a href="#" class="fauxlink">
+                                            <div class="promo___media">
+                                                <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                            </div>
+                                            <div class="promo___content">
+                                                <div class="promo___title text-small">
+                                                    <h3>
+                                                        <span class="fauxlink__target" itemprop="name">
+                                                            Title
+                                                        </span>
+                                                    </h3>
+                                                </div>
+                                                <div class="promo___byline text-smaller">
+                                                    <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!--#include virtual="/inc/extras-foot-1.html" -->
+
+        <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
+        <script src="bower_components/ig-fill/fill.js"></script>
+        <script src="bower_components/ondomready/ondomready.js"></script>
+        <script src="scripts/main-bundle.js"></script>
+        <!-- endbuild -->
+
+        <!--#include virtual="/inc/extras-foot-2.html" -->
+    </body>
+</html>

@@ -1,0 +1,3 @@
+@function span($n-columns) {
+  @return $n-columns * $ft-grid-column-width + $ft-grid-gutter-width * ($n-columns - 1);
+}
