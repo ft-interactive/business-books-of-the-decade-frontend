@@ -8,24 +8,24 @@
 // </a>
 
 .fauxlink__target {
-  color: $m-font-color-link;
+  color: oColorsGetColorFor(link, text);
 }
 
 .fauxlink {
-  color: $m-font-color-body;
+  color: oColorsGetColorFor(body, text);
 
   &:hover,
   &:focus {
-    color: $m-font-color-body;
+    color: oColorsGetColorFor(body, text);
 
     .fauxlink__target {
-      color: $m-font-color-link-hover;
+      color: oColorsGetColorFor(link-hover, text);
     }
   }
 
   &:active {
     .fauxlink__target {
-      color: $m-font-color-body;
+      color: oColorsGetColorFor(body, text);
     }
   }
 }

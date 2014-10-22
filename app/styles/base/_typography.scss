@@ -8,7 +8,7 @@
  */
 
 html {
-  @extend %body-font;
+  font-family: oFontsGetFontFamilyWithFallbacks(BentonSans);
   -moz-osx-font-smoothing: grayscale; /* 1 */
   -webkit-font-smoothing: antialiased; /* 1 */
   font-size: 62.5%; /* 2 */
@@ -25,13 +25,13 @@ h3,
 h4,
 h5,
 h6 {
-  @extend %headline-font;
+  font-weight: normal;
 }
 
 .headline {
-  padding-left: $ft-grid-gutter-width;
-  border-left: $ft-grid-gutter-width solid $ft-color-warmgrey1;
-  border-bottom: 1px solid $ft-color-warmgrey1;
+  padding-left: $gutter/2;
+  border-left: $gutter/2 solid oColorsGetPaletteColor(grey-tint1);
+  border-bottom: 1px solid oColorsGetPaletteColor(grey-tint1);
   margin-bottom: .5em;
   line-height: 1;
   font-size: 1.4em;

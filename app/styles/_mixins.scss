@@ -1,3 +1,11 @@
-@function span($n-columns) {
-  @return $n-columns * $ft-grid-column-width + $ft-grid-gutter-width * ($n-columns - 1);
+// Simplify the Origami grid function
+@function grid-span($n-columns, $context: 12) {
+  @return oGridColumnWidth($n-columns, $context);
+}
+
+@mixin grid-column($n-columns, $context: 12) {
+  @include oGridBoxSizing(border-box);
+  width: span($n-columns, $context);
+  padding-left: $gutter/2;
+  padding-right: $gutter/2;
 }

@@ -3,9 +3,9 @@
 @include mq(tablet) {
   .content-block {
     margin-left: span(1);
-    padding-left: $ft-grid-gutter-width * 2;
+    padding-left: $gutter * 2;
   }
   .content-block__headline {
-    margin-left: -1 * $ft-grid-gutter-width * 2;
+    margin-left: -1 * $gutter * 2;
   }
 }

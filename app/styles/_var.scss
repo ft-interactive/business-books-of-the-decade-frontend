@@ -1,109 +1,11 @@
-
-/**
-* Configure ft-scss-fontface
-*
-* More variables are available. Only the most useful
-* or commonly altered ones are shown below.
-*/
-
-// switch on/off custom font faces
-$ft-include-fontfaces:              true;
-
-// switch on/off sans-serif only fonts
-$ft-sans-only: true;
-
-// it's possible to switch on/off individual fonts
-$ft-include-miller-font:            true;
-$ft-include-benton-font:            true;
-$ft-include-clarion-font:           true;
-$ft-include-bentongraphics-font:    false;
-$ft-include-icon-font:              false;
-
-
-/**
-* Configure ft-scss-tools
-*
-*/
-
-// Base unit to calculate all font sizes and vertical rhythm.
-// All font sizes are mutiples of this. Used in combination
-// with the `base()` function and the `vertical` and `font-face`
-// mixins
-$base-font-size: 16px;
-
 // Code inside `@if $is-oldie {}` will compile inside oldie.css
 $is-oldie: false !default;
 
-// responsive breakpoints. Use in combination
-// with the `respond` mixin.
-$min-device-width:       320px;
-$tablet-device-width:    span(8);
-$document-width:         972px;
-$max-device-width:       2880px;
-
 // Same thing but with mq()
 $mq-breakpoints: (
-    mobile:   320px,
-    tablet:   $tablet-device-width,
-    document: 972px
+  mobile:   320px,
+  tablet:   620px,
+  document: 980px
 );
 
-
-
-/**
-* Configure minimal
-*
-* Note there are a few variables you can configure here.
-* Only the most useful have been given below.
-* For more see minimal/_var.scss
-*
-* You'll notice all SASS variables defined by Minimal
-* begin with the `$m-` prefix.
-*
-*/
-// false, 'flex', 'page', 'rail', 'moreon', 'body', 'secondary'
-$m-container-width: 'page';
-
-// adds the border above or below the interactive
-$m-top-border:      true;
-$m-bottom-border:   false;
-
-// px widths for the various container-widths
-$m-container-width-page:      $ft-falcon-page-width;
-$m-container-width-rail:      $ft-falcon-rail-width;
-$m-container-width-body:      $ft-falcon-body-width;
-$m-container-width-moreon:    $ft-falcon-moreon-width;
-$m-container-width-secondary: $ft-falcon-secondary-pic-width;
-
-$m-font-size-h1:              2   ;
-$m-font-size-h2:              1.8 ;
-$m-font-size-h3:              1.5 ;
-$m-font-size-h4:              1.4 ;
-$m-font-size-h5:              1.25;
-$m-font-size-h6:              1   ;
-$m-font-size-body:            1   ;
-$m-font-size-body-small:      0.8 ;
-$m-font-size-caption:         0.8 ;
-$m-font-size-caption-small:   0.6 ;
-
-$m-vertical-h1:                 1em;
-$m-vertical-h2:                 1em;
-$m-vertical-h3:                 1em;
-$m-vertical-h4:                 1em;
-$m-vertical-h5:                 1em;
-$m-vertical-h6:                 1em;
-$m-vertical-p:                  1em;
-$m-vertical-img:                1;
-
-// font colors
-$m-font-color-header:         $ft-color-black-text;
-$m-font-color-header-muted:   $ft-color-black-text;
-$m-font-color-body:           $ft-color-black-text;
-$m-font-color-body-muted:     $ft-color-black-text;
-$m-font-color-caption:        $ft-color-black-text;
-$m-font-color-link:           $ft-color-linkblue-text;
-$m-font-color-link-hover:     $ft-color-black-text;
-
-// background colors
-$m-body-bg:                   $ft-color-primarypink;
-$m-panel-bg:                  $ft-color-tint1;
+$gutter: $o-grid-responsive-half-gutter * 2;

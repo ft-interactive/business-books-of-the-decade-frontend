@@ -1,9 +1,9 @@
 a {
   text-decoration: none;
-  color: $m-font-color-link;
+  @include oColorsFor(link, color);
 
   &:focus,
   &:hover {
-    color: $m-font-color-link-hover;
+    @include oColorsFor(link, hover);
   }
 }

@@ -45,7 +45,7 @@
                 </div>
             </div>
             <h1 class="microsite-name">
-                Business books of the decade
+                Business books of the decade
             </h1>
         </header>
         <div class="filter-bar">
@@ -54,14 +54,14 @@
                     <label for="search-label" class="visuallyhidden">
                         Search for a book title or author
                     </label>
-                    <input type="text" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
+                    <input type="text" class="o-ft-forms__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
                     <input type="submit" value="Submit" />
                 </div>
             </form>
             <form action="/" method="get">
                 <div class="filterform-wrapper">
                     <label for="filter">Filter by genre</label>
-                    <select name="f" id="filter">
+                    <select name="f" id="filter" class="o-ft-forms__field--select">
                         <option value="">Choose a genre</option>
                     </select>
                     <input type="submit" value="Submit" />
@@ -152,7 +152,6 @@
         <!--#include virtual="/inc/extras-foot-1.html" -->
 
         <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
-        <script src="bower_components/ig-fill/fill.js"></script>
         <script src="bower_components/ondomready/ondomready.js"></script>
         <script src="scripts/main-bundle.js"></script>
         <!-- endbuild -->
