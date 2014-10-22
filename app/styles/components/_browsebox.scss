@@ -2,4 +2,8 @@
 .browsebox__header {
   border-bottom: 1px solid oColorsGetPaletteColor(grey-tint1);
 }
-.browsebox__content {}
+.browsebox__content {
+  padding-top: 10px;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}

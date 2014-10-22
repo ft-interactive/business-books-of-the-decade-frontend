@@ -1,0 +1,38 @@
+.filterform {
+  @include mq(tablet) {
+    float: left;
+    width: 35%;
+  }
+}
+.filterform__inner {
+  padding-left: 115px;
+}
+.filterform__label {
+  float: left;
+  margin-left: -115px;
+  padding-top: 9px;
+}
+
+@include mq(tablet) {
+  .filterform__inner {
+    padding-left: 50px;
+  }
+  .filterform__label {
+    margin-left: -50px;
+  }
+  .filterform__filter-by {
+    display: none;
+  }
+}  
+.filterform__select {
+  float: left;
+  
+  // Normalize height and size with the text fields
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-size: 18px 18px;
+}
+.filterform__submit {
+  
+}
+

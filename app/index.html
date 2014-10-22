@@ -41,37 +41,405 @@
             <div class="topbar">
                 <div class="container">
                     <div class="header__logo"><a href="/" class="ft-logo"><span class="visuallyhidden">Financial Times</span></a></div>
-                <!-- burger icon -->
                 </div>
             </div>
             <h1 class="microsite-name">
                 Business books of the decade
             </h1>
         </header>
-        <div class="filter-bar">
+
+        <div class="filter-bar clearfix">
             <form class="searchform" action="/" method="get">
-                <div class="searchform-wrapper">
+                <div class="searchform__inner">
                     <label for="search-label" class="visuallyhidden">
                         Search for a book title or author
                     </label>
-                    <input type="text" class="o-ft-forms__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
-                    <input type="submit" value="Submit" />
+                    <input type="text" class="o-ft-forms__field searchform__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
+                    <input type="submit" value="Submit" class="searchform__submit" />
                 </div>
             </form>
-            <form action="/" method="get">
-                <div class="filterform-wrapper">
-                    <label for="filter">Filter by genre</label>
-                    <select name="f" id="filter" class="o-ft-forms__field--select">
-                        <option value="">Choose a genre</option>
+            <form class="filterform" action="/" method="get">
+                <div class="filterform__inner clearfix">
+                    <label for="filter" class="filterform__label text-quiet text-uppercase text-small">
+                        <span class="filterform__filter-by">Filter by </span>genre
+                    </label>
+                    <select name="f" id="filter" class="filterform__select o-ft-forms__field--select">
+                        <option value="">Show all</option>
                     </select>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" class="filterform__submit visuallyhidden" />
                 </div>
             </form>
         </div>
+
         <main>
             <div class="container">
+                <ul class="shelf inline-list shelf--big text-center">
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--winner"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--winner"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="shelf inline-list shelf--medium text-center">
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--winner"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--winner"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--short-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--short-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--short-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="shelf__item">
+                        <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                            <a href="#" class="fauxlink">
+                                <div class="book-promo__prizes text-quiet">
+                                    <i class="badge badge--long-listed"></i>
+                                    <span class="visuallyhidden">Winner</span>
+                                    2005
+                                </div>
+                                <div class="book-promo__media">
+                                    <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                </div>
+                                <div class="book-promo__content visuallyhidden">
+                                    <h3 class="book-promo__title text-small">
+                                        <span class="fauxlink__target" itemprop="name">
+                                            Title
+                                        </span>
+                                    </h3>
+                                    <div class="book-promo__byline text-smaller">
+                                        <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                
                 <div class="content-primary">
-                    <div class="book" itemscope itemtype="http://schema.org/Book">
+                    <article class="book" itemscope itemtype="http://schema.org/Book">
                         <div class="book__media">
                             <img itemprop="image" src="/images/content/piketty.jpg" alt="" />
                         </div>
@@ -109,45 +477,151 @@
                                 <p>Corporis, laboriosam, perspiciatis eos eligendi nisi enim placeat possimus blanditiis minima voluptatem repellat ducimus quos assumenda molestias maiores! Neque, atque, ab accusamus quo officia eligendi.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="content-secondary">
-                    <div class="browsebox">
-                        <div class="browsebox__header">
-                            <a href="#" class="fauxlink">
-                                <h2 class="text-uppercase text-small text-quiet">Others in <span class="fauxlink__target">trade</span></h2>
-                            </a>
-                        </div>
-                        <div class="browsebox__content">
-                            <ul class="shelf row-list">
-                                <li class="shelf__item">
-                                    <div class="promo" itemscope itemtype="http://schema.org/Book">
-                                        <a href="#" class="fauxlink">
-                                            <div class="promo___media">
-                                                <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
-                                            </div>
-                                            <div class="promo___content">
-                                                <div class="promo___title text-small">
-                                                    <h3>
-                                                        <span class="fauxlink__target" itemprop="name">
-                                                            Title
-                                                        </span>
-                                                    </h3>
-                                                </div>
-                                                <div class="promo___byline text-smaller">
-                                                    <a href="#" class="text-quiet" itemprop="author">Author</a>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    </article>
+                    <nav class="subnavigation">
+                        <ul class="row-list">
+                            <li class="subnavigation__item subnavigation__item--1">
+                                <a href="#" class="fauxlink subnavigation__action">
+                                    <div class="text-uppercase text-small text-quiet">More in <span class="fauxlink__target">2014</span></div>
+                                </a>
+                            </li>
+                            <li class="subnavigation__item subnavigation__item--2">
+                                <a href="#" class="subnavigation__action">Poor economics Abhijit Banerjee, Esther Duflo</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </main>
+        <div class="container">
+            <div class="content-secondary">
+                <div class="browsebox">
+                    <div class="browsebox__header">
+                        <a href="#" class="fauxlink">
+                            <h2 class="text-uppercase text-small text-quiet">Others in <span class="fauxlink__target">trade</span></h2>
+                        </a>
+                    </div>
+                    <nav class="browsebox__content">
+                        <ul class="shelf row-list shelf--small">
+                            <li class="shelf__item">
+                                <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                                    <a href="#" class="fauxlink">
+                                        <div class="book-promo__media">
+                                            <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                        </div>
+                                        <div class="book-promo__content">
+                                            <h3 class="book-promo__title text-small">
+                                                <span class="fauxlink__target" itemprop="name">
+                                                    Title
+                                                </span>
+                                            </h3>
+                                            <div class="book-promo__byline text-smaller">
+                                                <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="shelf__item">
+                                <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                                    <a href="#" class="fauxlink">
+                                        <div class="book-promo__media">
+                                            <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                        </div>
+                                        <div class="book-promo__content">
+                                            <h3 class="book-promo__title text-small">
+                                                <span class="fauxlink__target" itemprop="name">
+                                                    Title
+                                                </span>
+                                            </h3>
+                                            <div class="book-promo__byline text-smaller">
+                                                <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="shelf__item">
+                                <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                                    <a href="#" class="fauxlink">
+                                        <div class="book-promo__media">
+                                            <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                        </div>
+                                        <div class="book-promo__content">
+                                            <h3 class="book-promo__title text-small">
+                                                <span class="fauxlink__target" itemprop="name">
+                                                    Title
+                                                </span>
+                                            </h3>
+                                            <div class="book-promo__byline text-smaller">
+                                                <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="shelf__item">
+                                <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                                    <a href="#" class="fauxlink">
+                                        <div class="book-promo__media">
+                                            <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                        </div>
+                                        <div class="book-promo__content">
+                                            <h3 class="book-promo__title text-small">
+                                                <span class="fauxlink__target" itemprop="name">
+                                                    Title
+                                                </span>
+                                            </h3>
+                                            <div class="book-promo__byline text-smaller">
+                                                <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="shelf__item">
+                                <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                                    <a href="#" class="fauxlink">
+                                        <div class="book-promo__media">
+                                            <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                        </div>
+                                        <div class="book-promo__content">
+                                            <h3 class="book-promo__title text-small">
+                                                <span class="fauxlink__target" itemprop="name">
+                                                    Title
+                                                </span>
+                                            </h3>
+                                            <div class="book-promo__byline text-smaller">
+                                                <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="shelf__item">
+                                <div class="book-promo" itemscope itemtype="http://schema.org/Book">
+                                    <a href="#" class="fauxlink">
+                                        <div class="book-promo__media">
+                                            <img src="/images/content/piketty.jpg" alt="" itemprop="image" />
+                                        </div>
+                                        <div class="book-promo__content">
+                                            <h3 class="book-promo__title text-small">
+                                                <span class="fauxlink__target" itemprop="name">
+                                                    Title
+                                                </span>
+                                            </h3>
+                                            <div class="book-promo__byline text-smaller">
+                                                <a href="#" class="text-quiet" itemprop="author">Author</a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
         <!--#include virtual="/inc/extras-foot-1.html" -->
 

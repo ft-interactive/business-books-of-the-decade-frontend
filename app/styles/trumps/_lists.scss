@@ -1,5 +1,7 @@
 %unstyled-list,
 .unstyled-list {
+  margin-top: 0;
+  margin-bottom: 0;
   margin-left: 0;
   padding-left: 0;
 
@@ -13,7 +15,7 @@
   @extend %unstyled-list;
 
   > li {
-    display: inline;
+    display: inline-block;
   }
 }
 
@@ -23,5 +25,6 @@
 
   > li {
     display: table-cell;
+    vertical-align: top;
   }
 }
