@@ -1,7 +1,7 @@
 {
-  "name": "business-book-of-the-year",
+  "name": "business-books-of-the-decade-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "debowerify": "~0.8.1",
     "grunt": "~0.4.5",
