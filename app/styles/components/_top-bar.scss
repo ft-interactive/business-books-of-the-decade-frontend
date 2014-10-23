@@ -1,0 +1,40 @@
+.top-bar {
+  background: #fff9f1;
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+  @include mq(tablet) {
+    padding: 14px 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 100%;
+    height: 5px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+  }
+}
+.top-bar__action {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  width: 32px;
+  height: 32px;
+  background-image: url(/bower_components/o-ft-icons/svg/hamburger.svg);
+  background-size: 20px 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  .no-js & {
+    display: none !important;
+  }
+
+  @include mq(tablet) {
+    display: none;
+  }
+}

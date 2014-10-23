@@ -1,10 +1,17 @@
 .filter-bar {
+  position: absolute;
   padding: 15px $gutter;
-  margin-left: -$gutter/2;
-  margin-right: -$gutter/2;
+  z-index: 1;
+  width: 100%;
+  @include oGridBoxSizing(border-box);
+  top: 43px;
   background: oColorsGetColorFor(box, background);
   border-bottom: 2px solid oColorsGetPaletteColor(grey-tint1);
-  
+
+  .no-js & {
+    display: none !important;
+  }
+
   @include mq(tablet) {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
@@ -12,5 +19,14 @@
     margin: 0 auto;
     padding-left: $gutter*.75;
     padding-right: $gutter*.75;
+    position: static;
+  }
+}
+.filter-bar--hidden {
+  display: none;
+
+  @include mq(tablet) {
+    // Always display the filter bar on large screens
+    display: block;
   }
 }

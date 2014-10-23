@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+  position: relative;
   margin-left: $gutter/2;
   margin-right: $gutter/2;
   max-width: mq-get-breakpoint-width(tablet) - $gutter;
