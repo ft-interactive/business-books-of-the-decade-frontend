@@ -1,30 +1,30 @@
-.filterform {
+.filter-form {
   @include mq(tablet) {
     float: left;
     width: 35%;
   }
 }
-.filterform__inner {
+.filter-form__inner {
   padding-left: 115px;
 }
-.filterform__label {
+.filter-form__label {
   float: left;
   margin-left: -115px;
   padding-top: 9px;
 }
 
 @include mq(tablet) {
-  .filterform__inner {
+  .filter-form__inner {
     padding-left: 50px;
   }
-  .filterform__label {
+  .filter-form__label {
     margin-left: -50px;
   }
-  .filterform__filter-by {
+  .filter-form__filter-by {
     display: none;
   }
 }  
-.filterform__select {
+.filter-form__select {
   float: left;
   
   // Normalize height and size with the text fields
@@ -32,7 +32,7 @@
   padding-bottom: 4px;
   background-size: 18px 18px;
 }
-.filterform__submit {
+.filter-form__submit {
   
 }
 

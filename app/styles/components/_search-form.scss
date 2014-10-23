@@ -1,4 +1,4 @@
-.searchform {
+.search-form {
   margin-bottom: 12px;
 
   @include mq(tablet) {
@@ -7,16 +7,16 @@
     margin-bottom: 0;
   }
 }
-.searchform__inner {
+.search-form__inner {
   position: relative;
 }
-.searchform__label {
+.search-form__label {
 }
 // Tripe class name, to override Origami's specificity
-.searchform__field.searchform__field.searchform__field {
+.search-form__field.search-form__field.search-form__field {
   padding-left: 36px;
 }
-.searchform__submit {
+.search-form__submit {
   position: absolute;
   display: block;
   overflow: hidden;
@@ -36,7 +36,7 @@
 
   &:hover,
   &:focus,
-  .searchform__field:focus + & {
+  .search-form__field:focus + & {
     opacity: 8;
   }
 }

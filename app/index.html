@@ -48,24 +48,24 @@
         </header>
 
         <div class="filter-bar filter-bar--hidden clearfix js-filter-bar" id="filterbar">
-            <form class="searchform" action="/" method="get">
-                <div class="searchform__inner">
+            <form class="search-form" action="/" method="get">
+                <div class="search-form__inner">
                     <label for="search-label" class="visuallyhidden">
                         Search for a book title or author
                     </label>
-                    <input type="text" class="o-ft-forms__field searchform__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
-                    <input type="submit" value="Submit" class="searchform__submit" />
+                    <input type="text" class="o-ft-forms__field search-form__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
+                    <input type="submit" value="Submit" class="search-form__submit" />
                 </div>
             </form>
-            <form class="filterform" action="/" method="get">
-                <div class="filterform__inner clearfix">
-                    <label for="filter" class="filterform__label text-quiet text-uppercase text-small">
-                        <span class="filterform__filter-by">Filter by </span>genre
+            <form class="filter-form" action="/" method="get">
+                <div class="filter-form__inner clearfix">
+                    <label for="filter" class="filter-form__label text-quiet text-uppercase text-small">
+                        <span class="filter-form__filter-by">Filter by </span>genre
                     </label>
-                    <select name="f" id="filter" class="filterform__select o-ft-forms__field--select">
+                    <select name="f" id="filter" class="filter-form__select o-ft-forms__field--select">
                         <option value="">Show all</option>
                     </select>
-                    <input type="submit" value="Submit" class="filterform__submit visuallyhidden" />
+                    <input type="submit" value="Submit" class="filter-form__submit visuallyhidden" />
                 </div>
             </form>
         </div>

@@ -24,7 +24,7 @@ $switch-to-bigger-logo-breakpoint: tablet;
 
 .header__logo {
   position: relative;
-  max-width: 21px;
+  max-width: 22px;
   margin: 0 auto;
   text-align: center;
 
@@ -36,7 +36,6 @@ $switch-to-bigger-logo-breakpoint: tablet;
 .ft-logo {
   display: block;
   position: relative;
-//  padding-bottom: percentage(103px/186px);
   padding-bottom: 100%;
   overflow: hidden;
 
@@ -74,4 +73,7 @@ $switch-to-bigger-logo-breakpoint: tablet;
   @include mq(tablet) {
     font-size: 3em;
   }
+}
+.content-primary {
+  margin-bottom: 2em;
 }
