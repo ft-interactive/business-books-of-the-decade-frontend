@@ -1,13 +1,10 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="oldie no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html class="oldie no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if IE 8]><html class="oldie no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-oldie no-js"><!--<![endif]-->
+<!DOCTYPE html>
+<html class="no-js" lang="en-GB">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}FT Business books of the decade{% endblock %}</title>
         <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--#include virtual="/inc/extras-head-1.html" -->
@@ -20,13 +17,15 @@
         <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="{{ site.staticBaseUrl }}bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="{{ site.staticBaseUrl }}styles/main.css">
+        <link rel="stylesheet" href="{{ site.staticBaseUrl }}scripts/vendor/tipuedrop/tipuedrop.css">
         <!--<![endif]-->
         <!-- endbuild -->
 
         <!-- build:css({.tmp,app,.}) styles/oldie.css -->
         <!--[if lte IE 8]>
-        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
-        <link rel="stylesheet" href="styles/oldie.css">
+        <link rel="stylesheet" href="{{ site.staticBaseUrl }}bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="{{ site.staticBaseUrl }}styles/oldie.css">
+        <link rel="stylesheet" href="{{ site.staticBaseUrl }}tipuedrop/tipuedrop.css">
         <![endif]-->
         <!-- endbuild -->
 
@@ -48,22 +47,24 @@
         </header>
 
         <div class="filter-bar filter-bar--hidden clearfix js-filter-bar" id="filterbar">
-            <form class="search-form" action="/" method="get">
+            <form class="search-form js-search-form">
                 <div class="search-form__inner">
-                    <label for="search-label" class="visuallyhidden">
+                    <label for="tipue_drop_input" class="visuallyhidden">
                         Search for a book title or author
                     </label>
-                    <input type="text" class="o-ft-forms__field search-form__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
-                    <input type="submit" value="Submit" class="search-form__submit" />
+                    <input type="text" class="o-ft-forms__field search-form__field js-tipue-drop" autocomplete="off" id="tipue_drop_input" placeholder="Search for a book title or author" value="" />
+                    <input type="submit" value="Submit" class="search-form__submit" tabindex="-1" />
+                    <div id="tipue_drop_content"></div>
                 </div>
             </form>
-            <form class="filter-form" action="/" method="get">
+            <form class="filter-form js-filter-form" action="/" method="get">
                 <div class="filter-form__inner clearfix">
                     <label for="filter" class="filter-form__label text-quiet text-uppercase text-small">
                         <span class="filter-form__filter-by">Filter by </span>genre
                     </label>
-                    <select name="f" id="filter" class="filter-form__select o-ft-forms__field--select">
+                    <select name="category" id="filter" class="filter-form__select o-ft-forms__field--select js-filter-form-select">
                         <option value="">Show all</option>
+                        <option value="comedy">Comedy</option>
                     </select>
                     <input type="submit" value="Submit" class="filter-form__submit visuallyhidden" />
                 </div>
@@ -74,7 +75,11 @@
 
         <!--#include virtual="/inc/extras-foot-1.html" -->
 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
         <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
+        <script src="{{ site.staticBaseUrl }}scripts/vendor/tipuedrop/tipuedrop_content.js"></script>
+        <script src="{{ site.staticBaseUrl }}scripts/vendor/tipuedrop/tipuedrop.js"></script>
         <script src="{{ site.staticBaseUrl }}bower_components/ondomready/ondomready.js"></script>
         <script src="{{ site.staticBaseUrl }}scripts/main-bundle.js"></script>
         <!-- endbuild -->
