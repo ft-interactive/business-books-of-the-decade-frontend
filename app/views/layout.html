@@ -1,0 +1,84 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="oldie no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="oldie no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="oldie no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-oldie no-js"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Business book of the decade{% endblock %}</title>
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--#include virtual="/inc/extras-head-1.html" -->
+
+        <!--
+            Serve a different stylesheet for IE8 :
+            http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8
+        -->
+        <!-- build:css({.tmp,app,.}) styles/main.css -->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <!--<![endif]-->
+        <!-- endbuild -->
+
+        <!-- build:css({.tmp,app,.}) styles/oldie.css -->
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="styles/oldie.css">
+        <![endif]-->
+        <!-- endbuild -->
+
+        <script src="//cdn.polyfill.io/v1/polyfill.min.js"></script>
+
+        <!--#include virtual="/inc/extras-head-2.html" -->
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <header class="header">
+            <div class="top-bar">
+                <div class="container">
+                    <div class="header__logo"><a href="/" class="ft-logo"><span class="visuallyhidden">Financial Times</span></a></div>
+                    <div class="js-filter-bar-toggle-placeholder"></div>
+                </div>
+            </div>
+            <h1 class="microsite-name">
+                Business books of the decade
+            </h1>
+        </header>
+
+        <div class="filter-bar filter-bar--hidden clearfix js-filter-bar" id="filterbar">
+            <form class="search-form" action="/" method="get">
+                <div class="search-form__inner">
+                    <label for="search-label" class="visuallyhidden">
+                        Search for a book title or author
+                    </label>
+                    <input type="text" class="o-ft-forms__field search-form__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
+                    <input type="submit" value="Submit" class="search-form__submit" />
+                </div>
+            </form>
+            <form class="filter-form" action="/" method="get">
+                <div class="filter-form__inner clearfix">
+                    <label for="filter" class="filter-form__label text-quiet text-uppercase text-small">
+                        <span class="filter-form__filter-by">Filter by </span>genre
+                    </label>
+                    <select name="f" id="filter" class="filter-form__select o-ft-forms__field--select">
+                        <option value="">Show all</option>
+                    </select>
+                    <input type="submit" value="Submit" class="filter-form__submit visuallyhidden" />
+                </div>
+            </form>
+        </div>
+
+        {% block content %}{% endblock %}
+
+        <!--#include virtual="/inc/extras-foot-1.html" -->
+
+        <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
+        <script src="bower_components/ondomready/ondomready.js"></script>
+        <script src="scripts/main-bundle.js"></script>
+        <!-- endbuild -->
+
+        <!--#include virtual="/inc/extras-foot-2.html" -->
+    </body>
+</html>

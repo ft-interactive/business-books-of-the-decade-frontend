@@ -1,0 +1,35 @@
+<article class="book" itemscope itemtype="http://schema.org/Book">
+    <div class="book__media">
+        <img itemprop="image" src="{{ book.image }}" alt="" />
+    </div>
+    <h1 class="book__title" itemprop="name">{{ book.name }}</h1>
+    <div class="book__byline">
+        <a href="#" class="text-quiet" itemprop="author">Thomas L, Friedman</a>
+    </div>
+    <div class="book__prizes">
+        <a href="#" class="text-quiet">
+            <i class="badge badge--winner"></i>
+            {{ book.prize }} {{ book.year }}
+        </a>
+    </div>
+    <div class="book__meta">
+        <dl class="meta">
+            <dt class="meta__title">Genres</dt>
+            {% for genre in book.genres %}
+            <dd class="meta__item text-quiet">
+                <a href="/{{ genre }}" class="text-quiet" itemprop="genre">{{ genre }}</a>{% if !loop.last %},{% endif %}
+            </dd>
+            {% endfor %}
+        </dl>
+    </div>
+    <div class="clear"></div>
+    <div class="book__content">
+        <div class="book__synopsis content-block">
+            <h2 class="headline content-block__headline">Synopsis</h2>
+            {{ book.synopsis }}
+        </div>
+    </div>
+    <div class="book__actions">
+        <a href="{{ book.buyitnow }}" class="o-ft-buttons">Buy it now</a>
+    </div>
+</article>

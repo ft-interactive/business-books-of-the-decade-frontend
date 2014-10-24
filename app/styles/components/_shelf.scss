@@ -9,13 +9,15 @@
 }
 
 .shelf--small {
-  font-size: (2em/3);
+  font-size: (3em/5);
   
   .shelf__item > * {
-    font-size: (1em/(2/3));
+    font-size: (1em/(3/5));
   }
 }
-.shelf--medium {
+
+.shelf--medium,
+.shelf--big {
   font-size: (3em/4);
 
   .shelf__item > * {
@@ -23,4 +25,10 @@
   }
 }
 .shelf--big {
+  @include mq(tablet) {
+    &,
+    .shelf__item > * {
+      font-size: 1em;
+    }
+  }
 }

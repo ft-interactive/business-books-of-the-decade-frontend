@@ -17,7 +17,6 @@
 }
 .subnavigation__action {
   display: block;
-  min-height: 42px;
   max-width: 200px;
 }
 
@@ -34,7 +33,6 @@
     float: right;
     text-align: right;
     padding-right: 1.5em;
-    line-height: 1.3em;
     position: relative;
 
     &:after {
