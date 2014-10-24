@@ -18,8 +18,8 @@
         -->
         <!-- build:css({.tmp,app,.}) styles/main.css -->
         <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="{{ site.staticBaseUrl }}bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="{{ site.staticBaseUrl }}styles/main.css">
         <!--<![endif]-->
         <!-- endbuild -->
 
@@ -75,8 +75,8 @@
         <!--#include virtual="/inc/extras-foot-1.html" -->
 
         <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
-        <script src="bower_components/ondomready/ondomready.js"></script>
-        <script src="scripts/main-bundle.js"></script>
+        <script src="{{ site.staticBaseUrl }}bower_components/ondomready/ondomready.js"></script>
+        <script src="{{ site.staticBaseUrl }}scripts/main-bundle.js"></script>
         <!-- endbuild -->
 
         <!--#include virtual="/inc/extras-foot-2.html" -->
