@@ -1,3 +1,6 @@
+{% extends 'layout.html' %}
+
+{% block content %}
 <article class="book" itemscope itemtype="http://schema.org/Book">
     <div class="book__media">
         <img itemprop="image" src="{{ book.image }}" alt="" />
@@ -33,3 +36,4 @@
         <a href="{{ book.buyitnow }}" class="o-ft-buttons">Buy it now</a>
     </div>
 </article>
+{% endblock %}
