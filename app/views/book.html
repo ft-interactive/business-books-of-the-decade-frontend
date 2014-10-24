@@ -32,8 +32,10 @@
             {{ book.synopsis }}
         </div>
     </div>
+    {% if book.buyitnow %}
     <div class="book__actions">
         <a href="{{ book.buyitnow }}" class="o-ft-buttons">Buy it now</a>
     </div>
+    {% endif %}
 </article>
 {% endblock %}
