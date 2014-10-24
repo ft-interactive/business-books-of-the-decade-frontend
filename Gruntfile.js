@@ -160,6 +160,21 @@ module.exports = function (grunt) {
             }
         },
 
+        px_to_rem: {
+            options: {
+                base: 10,
+                fallback: true // set to false when Opera Mini supports rem units
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '.tmp/styles/',
+                    src: '{,*/}*.css',
+                    dest: '.tmp/styles/'
+                }]
+            }
+        },
+
         uglify: {
             options: {
                 preserveComments: 'some'
@@ -366,9 +381,7 @@ module.exports = function (grunt) {
             dist: [
                 'browserify:main',
                 'sass',
-                'copy:styles',
-                'imagemin',
-                'svgmin'
+                'copy:styles'
             ]
         }
     });
@@ -403,6 +416,7 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
+        'px_to_rem',
         'concat',
         'cssmin',
         'uglify',

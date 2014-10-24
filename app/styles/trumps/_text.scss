@@ -1,10 +1,11 @@
-.text-tiny    { font-size: (11em/16); }
-.text-smaller { font-size: (12em/16); }
-.text-small   { font-size: (13em/16); }
+.text-tinier  { font-size: 10px; }
+.text-tiny    { font-size: 11px; }
+.text-smaller { font-size: 12px; }
+.text-small   { font-size: 13px; }
 
 .text-uppercase { text-transform: uppercase; }
 
-.text-quiet { color: oColorsGetPaletteColor(grey-tint2); }
+.text-quiet { color: #75746c; }
 
 .text-center { text-align: center; }
 .text-right  { text-align: right; }
