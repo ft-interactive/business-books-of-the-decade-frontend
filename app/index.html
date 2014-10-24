@@ -20,6 +20,7 @@
         <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="scripts/vendor/tipuedrop/tipuedrop.css">
         <!--<![endif]-->
         <!-- endbuild -->
 
@@ -27,6 +28,7 @@
         <!--[if lte IE 8]>
         <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="styles/oldie.css">
+        <link rel="stylesheet" href="tipuedrop/tipuedrop.css">
         <![endif]-->
         <!-- endbuild -->
 
@@ -48,22 +50,24 @@
         </header>
 
         <div class="filter-bar filter-bar--hidden clearfix js-filter-bar" id="filterbar">
-            <form class="search-form" action="/" method="get">
+            <form class="search-form js-search-form">
                 <div class="search-form__inner">
-                    <label for="search-label" class="visuallyhidden">
+                    <label for="tipue_drop_input" class="visuallyhidden">
                         Search for a book title or author
                     </label>
-                    <input type="text" class="o-ft-forms__field search-form__field" id="search-label" name="q" placeholder="Search for a book title or author" value="" />
-                    <input type="submit" value="Submit" class="search-form__submit" />
+                    <input type="text" class="o-ft-forms__field search-form__field js-tipue-drop" autocomplete="off" id="tipue_drop_input" placeholder="Search for a book title or author" value="" />
+                    <input type="submit" value="Submit" class="search-form__submit" tabindex="-1" />
+                    <div id="tipue_drop_content"></div>
                 </div>
             </form>
-            <form class="filter-form" action="/" method="get">
+            <form class="filter-form js-filter-form" action="/" method="get">
                 <div class="filter-form__inner clearfix">
                     <label for="filter" class="filter-form__label text-quiet text-uppercase text-small">
                         <span class="filter-form__filter-by">Filter by </span>genre
                     </label>
-                    <select name="f" id="filter" class="filter-form__select o-ft-forms__field--select">
+                    <select name="genre" id="filter" class="filter-form__select o-ft-forms__field--select js-filter-form-select">
                         <option value="">Show all</option>
+                        <option value="comedy">Comedy</option>
                     </select>
                     <input type="submit" value="Submit" class="filter-form__submit visuallyhidden" />
                 </div>
@@ -634,6 +638,9 @@
         <!--#include virtual="/inc/extras-foot-1.html" -->
 
         <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="scripts/vendor/tipuedrop/tipuedrop_content.js"></script>
+        <script src="scripts/vendor/tipuedrop/tipuedrop.js"></script>
         <script src="bower_components/ondomready/ondomready.js"></script>
         <script src="scripts/main-bundle.js"></script>
         <!-- endbuild -->

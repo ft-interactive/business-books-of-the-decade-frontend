@@ -20,5 +20,17 @@ onDomReady(function () {
         filterBar.classList.toggle('filter-bar--hidden');
       }, false);
     });
+
+    // Prevent search form submission
+    document.querySelector('.js-search-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+    }, false);
+
+    // Submit the filter form on change
+    document.querySelector('.js-filter-form-select').addEventListener('change', function() {
+      document.querySelector('.js-filter-form').submit();
+    }, false);
+
+    $('.js-tipue-drop').tipuedrop();
   }
 });
