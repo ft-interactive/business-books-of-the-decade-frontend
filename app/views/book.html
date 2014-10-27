@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 
+{% block title %}{{ book.title }} by {{ book.author }}{% endblock %}
+
 {% block content_primary %}
 <article class="book" itemscope itemtype="http://schema.org/Book">
     <div class="book__media">
@@ -7,10 +9,10 @@
     </div>
     <h1 class="book__title" itemprop="name">{{ book.title }}</h1>
     <div class="book__byline">
-        <a href="#" class="text-quiet" itemprop="author">{{ book.author }}</a>
+        <a href="/authors/{{ book.author }}" class="text-quiet" itemprop="author">{{ book.author }}</a>
     </div>
     <div class="book__prizes">
-        <a href="#" class="text-quiet">
+        <a href="/books/{{ book.year }}" class="text-quiet">
             <i class="badge badge--{{ book.rank }}"></i>
             {{ book.rank }} {{ book.year }}
         </a>

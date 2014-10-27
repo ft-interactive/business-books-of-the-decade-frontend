@@ -1,7 +1,7 @@
 .ft-logo {
   display: block;
   position: relative;
-  padding-bottom: percentage(33px/400px);
+  padding-bottom: percentage(20px/240px); // Calculate intrinsic ratio
   opacity: .8;
   transition: .2s opacity ease-in;
 
@@ -9,7 +9,7 @@
   &:hover {
     opacity: 1;
   }
-  
+
   &:after {
     content: '';
     position: absolute;
@@ -18,7 +18,8 @@
     bottom: 0;
     left: 0;
     display: block;
-    background-image: url(/bower_components/o-ft-icons/svg/brand-ft-masthead.svg);
+    // Load a PNG because SVG renders poorly in many browsers
+    background-image: url('../images/brand-ft-masthead.png');
     background-size: 100%;
     background-repeat: no-repeat;
   }
