@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title -%}
+{% if page.title -%}
+{{ page.title }} (list) - 
+{%- endif %}
+{{ site.name }}
+{%- endblock %}
+
+{% block content_primary %}
+
+{% spaceless %}
+    {% for book in books %}
+        {% if loop.first %}
+        <ul class="shelf inline-list shelf--big text-center">
+        {% endif %}
+            <li class="shelf__item">
+                {% include "./book-promo.html" %}
+            </li>
+        {% if loop.last %}
+        </ul>
+        {% endif %}
+    {% endfor %}
+{% endspaceless %}
+
+{% endblock %}

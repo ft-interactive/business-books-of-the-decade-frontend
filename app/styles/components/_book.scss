@@ -2,10 +2,11 @@
 .book__media {
   float: left;
   width: 40%;
-  margin-right: $gutter/2;
-
+  margin-right: 12px;
+  padding-top: 3px; // align with top of text
+  
   @include mq(tablet) {
-    margin-right: $gutter;
+    padding-top: 5px; // align with top of text
   }
 }
 .book__title {

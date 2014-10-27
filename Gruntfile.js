@@ -25,12 +25,10 @@ module.exports = function (grunt) {
         watch: {
             js: {
                 files: [
-                    '<%= config.app %>/scripts/{,*/}*.js',
-                    '<%= config.app %>/templates/{,*/}*.hbs'
+                    '<%= config.app %>/scripts/**/*.js'
                 ],
                 tasks: ['browserify:main'],
                 options: {
-                    livereload: true,
                     spawn: false
                 }
             },
@@ -41,20 +39,8 @@ module.exports = function (grunt) {
                 files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['sass'],
                 options: {
-                    livereload: true,
                     spawn: false
                 }
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    ['<%= config.app %>/*.html'],
-                    '.tmp/styles/{,*/}*.css',
-                    '.tmp/scripts/{,*/}*.js',
-                    '<%= config.app %>/images/{,*/}*'
-                ]
             }
         },
 
@@ -62,30 +48,12 @@ module.exports = function (grunt) {
         connect: {
             options: {
                 port: 9000,
-                livereload: 35729,
                 hostname: '0.0.0.0'
-            },
-            livereload: {
-                options: {
-                    open: true,
-                    middleware: [
-                        function (req, res, next) {
-                            if (req.url.substring(0,18) === '/bower_components/') {
-                                connect.static(__dirname)(req, res, next);
-                            }
-                            else next();
-                        },
-                        connect.static('.tmp'),
-                        connect.static('app'),
-                        connect.directory('app')
-                    ]
-                }
             },
             dist: {
                 options: {
                     open: true,
-                    base: '<%= config.dist %>',
-                    livereload: false
+                    base: '<%= config.dist %>'
                 }
             }
         },
@@ -134,7 +102,7 @@ module.exports = function (grunt) {
 
         browserify: {
             main: {
-                src: ['<%= config.app %>/scripts/main.js'],
+                src: ['<%= config.app %>/scripts/main.js', '<%= config.app %>/scripts/vendor/tipuedrop/tipuedrop.js'],
                 dest: '.tmp/scripts/main-bundle.js',
                 options: {
                     watch: true,
@@ -305,23 +273,6 @@ module.exports = function (grunt) {
                 src: '{,*/}*.css'
             }
         },
-        igdeploy: {
-            options: {
-                src: '.tmp/.upload',
-                destPrefix: '/var/opt/customer/apps/interactive.ftdata.co.uk/var/www/html',
-                baseURL: 'http://www.ft.com/ig/',
-            },
-            demo: {
-                options: {
-                    dest: 'demo/sites/2014/business-book-of-the-year'
-                }
-            },
-            live: {
-                options: {
-                    dest: 'sites/2014/business-book-of-the-year'
-                }
-            }
-        },
         open: {
             demo: {
                 path: '<%= igdeploy.options.baseURL %><%= igdeploy.demo.options.dest %>/'
@@ -338,14 +289,6 @@ module.exports = function (grunt) {
                 files: {
                     '<%= config.dist %>/index.html': '<%= config.dist %>/index.html'
                 }
-            }
-        },
-        report: {
-            demo: {
-                url: '<%= igdeploy.options.baseURL %><%= igdeploy.demo.options.dest %>/'
-            },
-            live: {
-                url: '<%= igdeploy.options.baseURL %><%= igdeploy.live.options.dest %>/'
             }
         },
         cdnify: {
@@ -396,19 +339,8 @@ module.exports = function (grunt) {
             'clean:server',
             'concurrent:server',
             // 'autoprefixer',
-            'connect:livereload',
             'watch'
         ]);
-    });
-
-    // short alias for server
-    grunt.registerTask('s', function (target) {
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
-    });
-
-    grunt.registerTask('server', function (target) {
-        grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-        grunt.task.run([target ? ('serve:' + target) : 'serve']);
     });
 
     grunt.registerTask('build', [
@@ -423,49 +355,12 @@ module.exports = function (grunt) {
         'copy:dist',
         'rev',
         'usemin',
-        'htmlmin',
-        'embed:dist'
+        'htmlmin'
+        // 'embed:dist'
     ]);
 
     grunt.registerTask('default', [
         'newer:jshint',
         'build'
     ]);
-
-    grunt.registerTask('undodeploy', function (target) {
-        if (!target) {
-            grunt.fail.fatal('You must define a deploy target. Choose one of the following:\n\tgrunt undodeploy:demo\n\tgrunt undodeploy:live');
-            return;
-        }
-
-        grunt.config.set('igdeploy.options.undo', true);
-
-        grunt.task.run('igdeploy:' + target);
-    });
-
-    grunt.registerTask('deploy', function (target) {
-        if (!grunt.file.isDir('dist')) {
-            grunt.fail.fatal('Couldn\'t find "dist" - please build before deploying!');
-            return;
-        }
-
-        if (grunt.option('force')) {
-            grunt.fail.fatal('You cannot use the force flag to deploy');
-            return;
-        }
-
-        if (!target) {
-            grunt.fail.fatal('You must define a deploy target. Choose one of the following:\n\tgrunt deploy:demo\n\tgrunt deploy:live');
-            return;
-        }
-
-        grunt.task.run([
-            'clean:upload',
-            'copy:upload',
-            'cdnify:' + target,
-            'igdeploy:' + target,
-            'open:' + target,
-            'report:' + target
-        ]);
-    });
 };

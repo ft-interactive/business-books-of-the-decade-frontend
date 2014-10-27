@@ -8,7 +8,7 @@ http://www.tipue.com/drop
 
 
 (function($) {
-
+    'use strict';
      $.fn.tipuedrop = function(options) {
 
           var set = $.extend( {
@@ -30,7 +30,7 @@ http://www.tipue.com/drop
                     async: false
                });
 
-               if (set.mode == 'json')
+               if (set.mode === 'json')
                {
                     $.getJSON(set.contentLocation,
                          function(json)
@@ -39,12 +39,12 @@ http://www.tipue.com/drop
                          }
                     );
                }
-               if (set.mode == 'static')
+               if (set.mode === 'static')
                {
                     tipuedrop_in = $.extend({}, tipuedrop);
                }
 
-               $(this).keyup(function(event)
+               $(this).keyup(function()
                {
                     getTipuedrop($(this));
                });
@@ -53,26 +53,27 @@ http://www.tipue.com/drop
                {
                     if ($obj.val())
                     {
-                         var c = 0;
+                         var c = 0,
+                             out;
                          for (var i = 0; i < tipuedrop_in.pages.length; i++)
                          {
                               var pat = new RegExp($obj.val(), 'i');
-                              if ((tipuedrop_in.pages[i].title.search(pat) != -1 || tipuedrop_in.pages[i].text.search(pat) != -1 || tipuedrop_in.pages[i].tags.search(pat) != -1) && c < set.show)
+                              if ((tipuedrop_in.pages[i].title.search(pat) !== -1 || tipuedrop_in.pages[i].author.search(pat) !== -1 || tipuedrop_in.pages[i].year.search(pat) !== -1) && c < set.show)
                               {
-                                   if (c == 0)
+                                   if (c === 0)
                                    {
-                                        var out = '<div id="tipue_drop_wrapper"><div class="tipue_drop_head"><div id="tipue_drop_head_text">Suggested results</div></div>';    
+                                        out = '<div id="tipue_drop_wrapper"><div class="tipue_drop_head"><div id="tipue_drop_head_text">Suggested results</div></div>';    
                                    }
-                                   out += '<a href="' + tipuedrop_in.pages[i].loc + '"';
+                                   out += '<a href="/books/' + tipuedrop_in.pages[i].year + '/' + tipuedrop_in.pages[i].rank + '/' + tipuedrop_in.pages[i].slug + '"';
                                    if (set.newWindow)
                                    {
                                         out += ' target="_blank"';
                                    }
-                                   out += '><div class="tipue_drop_item"><div class="tipue_drop_left"><img src="' + tipuedrop_in.pages[i].thumb + '" class="tipue_drop_image" alt=""></div><div class="tipue_drop_right"><div class="tipue_drop_right_title">' + tipuedrop_in.pages[i].title + '</div><div class="tipue_drop_right_text">' + tipuedrop_in.pages[i].text + '</div></div></div></a>';
+                                   out += '><div class="tipue_drop_item"><div class="tipue_drop_left"><img src="http://image.webservices.ft.com/v1/images/raw/http://interactivegraphics.ft-static.com/static/sites/2014/business-books-of-the-decade/covers/' + tipuedrop_in.pages[i].cover + '?source=business_books_ofthe_decade&amp;width=120" class="tipue_drop_image" alt=""></div><div class="tipue_drop_right"><div class="tipue_drop_right_title">' + tipuedrop_in.pages[i].title + '</div><div class="tipue_drop_right_text">' + tipuedrop_in.pages[i].author + '<br />' + tipuedrop_in.pages[i].year + '</div></div></div></a>';
                                    c++;
                               }
                          }
-                         if (c != 0)
+                         if (c !== 0)
                          {
                               out += '</div>';               
                               $('#tipue_drop_content').html(out);

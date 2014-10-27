@@ -14,6 +14,15 @@
   .shelf__item > * {
     font-size: (1em/(3/5));
   }
+  .book-promo__prizes {
+    @include visuallyhidden;
+  }
+  .book-promo__title {
+    @include text-size(tiny);
+  }
+  .book-promo__byline {
+    @include text-size(tinier);
+  }
 }
 
 .shelf--medium,
@@ -22,6 +31,12 @@
 
   .shelf__item > * {
     font-size: (1em/(3/4));
+  }
+  .book-promo__prizes {
+    @include text-size(small);
+  }
+  .book-promo__content {
+    @include visuallyhidden;
   }
 }
 .shelf--big {
