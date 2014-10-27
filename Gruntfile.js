@@ -295,14 +295,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        open: {
-            demo: {
-                path: '<%= igdeploy.options.baseURL %><%= igdeploy.demo.options.dest %>/'
-            },
-            live: {
-                path: '<%= igdeploy.options.baseURL %><%= igdeploy.live.options.dest %>/'
-            }
-        },
         embed: {
             options: {
                 threshold: '7KB'
@@ -323,28 +315,6 @@ module.exports = function (grunt) {
                 }],
                 options: {
                     base: '{{ site.staticBaseUrl }}'
-                }
-            },
-            demo: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/.upload',
-                    src: '**/*.{css,html}',
-                    dest: '.tmp/.upload'
-                }],
-                options: {
-                    base: '//interactivegraphics.ft-static.com/<%= igdeploy.demo.options.dest %>/'
-                }
-            },
-            live: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/.upload',
-                    src: '**/*.{css,html}',
-                    dest: '.tmp/.upload'
-                }],
-                options: {
-                    base: '//interactivegraphics.ft-static.com/<%= igdeploy.live.options.dest %>/'
                 }
             }
         },
@@ -383,7 +353,7 @@ module.exports = function (grunt) {
         'autoprefixer',
         'px_to_rem',
         'concat',
-        'cssmin',
+        // 'cssmin',
         'uglify',
         'copy:dist',
         'copy:distViews',
