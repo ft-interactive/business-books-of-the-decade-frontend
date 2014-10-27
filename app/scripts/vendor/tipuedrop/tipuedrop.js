@@ -9,7 +9,8 @@ http://www.tipue.com/drop
 
 (function($) {
     'use strict';
-     $.fn.tipuedrop = function(options) {
+    $.fn.tipuedrop = function(options) {
+          var tipuedrop = tipuedrop || {};
 
           var set = $.extend( {
           
