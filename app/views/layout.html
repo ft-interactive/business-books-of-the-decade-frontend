@@ -13,21 +13,16 @@
             Serve a different stylesheet for IE8 :
             http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8
         -->
-        <!-- build:css({.tmp,app,.}) styles/main.css -->
         <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="{{ site.staticBaseUrl }}bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="{{ site.staticBaseUrl }}styles/main.css">
-        <link rel="stylesheet" href="{{ site.staticBaseUrl }}scripts/vendor/tipuedrop/tipuedrop.css">
         <!--<![endif]-->
         <!-- endbuild -->
 
-        <!-- build:css({.tmp,app,.}) styles/oldie.css -->
         <!--[if lte IE 8]>
         <link rel="stylesheet" href="{{ site.staticBaseUrl }}bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="{{ site.staticBaseUrl }}styles/oldie.css">
-        <link rel="stylesheet" href="{{ site.staticBaseUrl }}tipuedrop/tipuedrop.css">
         <![endif]-->
-        <!-- endbuild -->
 
         <script src="//cdn.polyfill.io/v1/polyfill.min.js"></script>
 
@@ -71,18 +66,27 @@
             </form>
         </div>
 
-        {% block content %}{% endblock %}
+        <main>
+            <div class="container">
+                <div class="content-primary">
+                    {% block content_primary %}{% endblock %}
+                </div>
+            </div>
+        </main>
+        <div class="container">
+            <div class="content-secondary">
+                {% block content_secondary %}{% endblock %}
+            </div>
+        </div>
+        
 
         <!--#include virtual="/inc/extras-foot-1.html" -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-        <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
-        <script src="{{ site.staticBaseUrl }}scripts/vendor/tipuedrop/tipuedrop_content.js"></script>
-        <script src="{{ site.staticBaseUrl }}scripts/vendor/tipuedrop/tipuedrop.js"></script>
-        <script src="{{ site.staticBaseUrl }}bower_components/ondomready/ondomready.js"></script>
-        <script src="{{ site.staticBaseUrl }}scripts/main-bundle.js"></script>
-        <!-- endbuild -->
+
+        <script src="{{ site.staticBaseUrl }}concat/scripts/bottom.js"></script>
+
 
         <!--#include virtual="/inc/extras-foot-2.html" -->
     </body>

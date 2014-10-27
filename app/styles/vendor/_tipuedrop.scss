@@ -15,23 +15,24 @@ http://www.tipue.com/drop
   position: absolute;
   box-sizing: border-box;
   background-color: #fff;
-  border: 1px solid #e2e2e2;
-  margin-top: 3px;
+  border: 1px solid oColorsGetPaletteColor(pink-tint3);
+  margin-top: 2px;
   padding-top: 5px;
   padding-bottom: 5px;
   z-index: 50;
   border-radius: 5px;
   width: 100%;
   font-size: 13px;
+  box-shadow: 0 15px 40px oColorsGetPaletteColor(pink-tint3);
 }
 #tipue_drop_wrapper {
-  display: table;
 }
 #tipue_drop_wrapper a {
   text-decoration: none;
+  display: block;
+  clear: both;
 }
 .tipue_drop_item {
-  display: table-row;
   background-color: #fff;
 }
 .tipue_drop_item:hover {

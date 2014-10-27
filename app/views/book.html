@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 
-{% block content %}
+{% block content_primary %}
 <article class="book" itemscope itemtype="http://schema.org/Book">
     <div class="book__media">
-        <img itemprop="image" src="{{ book.cover }}" alt="" />
+        <img itemprop="image" src="http://image.webservices.ft.com/v1/images/raw/http://interactivegraphics.ft-static.com/static/sites/2014/business-books-of-the-decade/covers/{{ book.cover }}?source=business_books_ofthe_decade&amp;width=400" alt="" />
     </div>
-    <h1 class="book__title" itemprop="name">{{ book.name }}</h1>
+    <h1 class="book__title" itemprop="name">{{ book.title }}</h1>
     <div class="book__byline">
         <a href="#" class="text-quiet" itemprop="author">{{ book.author }}</a>
     </div>
@@ -32,10 +32,58 @@
             {{ book.synopsis }}
         </div>
     </div>
+    <div class="book__actions">
+        <a href="#" class="o-ft-buttons">Buy it now</a>
+    </div>
+
     {% if book.buyitnow %}
     <div class="book__actions">
         <a href="{{ book.buyitnow }}" class="o-ft-buttons">Buy it now</a>
     </div>
     {% endif %}
 </article>
+
+<nav class="subnavigation">
+    <ul class="row-list text-tiny">
+        <li class="subnavigation__item subnavigation__item--1">
+            <a href="/books/{{ book.year }}" class="fauxlink subnavigation__action">
+                <div class="text-uppercase text-quiet">More in <span class="fauxlink__target">{{ book.year }}</span></div>
+            </a>
+        </li>
+        <li class="subnavigation__item subnavigation__item--2">
+            <a href="#" class="subnavigation__action">
+                Poor economics
+                <br />
+                Abhijit Banerjee, Esther Duflo
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content_secondary %}
+
+{% for category in book.categories %}
+    {% for book in category.books %}
+        {% if loop.first %}
+        <div class="browsebox">
+            <div class="browsebox__header">
+                <a href="/categories/{{ category.slug }}" class="fauxlink">
+                    <h2 class="text-uppercase text-tiny text-quiet">Others in <span class="fauxlink__target">{{ category.name }}</span></h2>
+                </a>
+            </div>
+            <nav class="browsebox__content">
+                <ul class="shelf row-list shelf--small">
+        {% endif %}
+                    <li class="shelf__item">
+                        {% include "./book-promo.html" %}
+                    </li>
+        {% if loop.last %}
+                </ul>
+            </nav>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
 {% endblock %}

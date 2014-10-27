@@ -1,20 +1,20 @@
 <div class="book-promo" itemscope itemtype="http://schema.org/Book">
     <a href="/books/{{ book.year }}/{{ book.rank }}/{{ book.slug }}" class="fauxlink">
         <div class="book-promo__prizes">
-            <i class="badge badge--{{ book.prize }}"></i>
-            <span class="visuallyhidden">{{ book.prize|capitalize }}</span>
+            <i class="badge badge--{{ book.rank }}"></i>
+            <span class="visuallyhidden">{{ book.rank|capitalize }}</span>
             {{ book.year }}
         </div>
         <div class="book-promo__media">
             <img src="http://image.webservices.ft.com/v1/images/raw/http://interactivegraphics.ft-static.com/static/sites/2014/business-books-of-the-decade/covers/{{ book.cover }}?source=business_books_ofthe_decade&amp;width=200" alt="" itemprop="image" />
         </div>
-        <div class="book-promo__content visuallyhidden">
-            <h3 class="book-promo__title text-small">
+        <div class="book-promo__content">
+            <h3 class="book-promo__title">
                 <span class="fauxlink__target" itemprop="name">
                     {{ book.title }}
                 </span>
             </h3>
-            <div class="book-promo__byline text-smaller">
+            <div class="book-promo__byline">
                 <span class="text-quiet" itemprop="author">{{ book.author }}</span>
             </div>
         </div>
