@@ -3,8 +3,10 @@
     "browser": true,
     "globals": {
         "IG": true,
-        "onDomReady": true
+        "onDomReady": true,
+        "$": true
     },
+    "jquery": true,
     "esnext": true,
     "bitwise": true,
     "camelcase": false,
