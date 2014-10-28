@@ -10,16 +10,19 @@
 {% block content_primary %}
 
 {% spaceless %}
-    {% for book in books %}
-        {% if loop.first %}
-        <ul class="shelf inline-list shelf--big text-center">
-        {% endif %}
-            <li class="shelf__item">
-                {% include "./book-promo.html" %}
-            </li>
-        {% if loop.last %}
-        </ul>
-        {% endif %}
+    {% for year in books|groupBy('year') %}
+        <h2 class="section-title">{{ loop.key }}</h2>
+        {% for book in year %}
+            {% if loop.first %}
+            <ul class="shelf inline-list shelf--big text-center">
+            {% endif %}
+                <li class="shelf__item">
+                    {% include "./book-promo.html" %}
+                </li>
+            {% if loop.last %}
+            </ul>
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 {% endspaceless %}
 
