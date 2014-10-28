@@ -13,7 +13,7 @@
     </div>
     <div class="book__prizes">
         <a href="/books/{{ book.year }}" class="text-quiet">
-            <i class="badge badge--{{ book.rank }}"></i>
+            <i class="badge badge--{{ book.rank|lower }}"></i>
             {{ book.rank }} {{ book.year }}
         </a>
     </div>

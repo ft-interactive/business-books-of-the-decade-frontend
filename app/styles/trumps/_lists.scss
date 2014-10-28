@@ -16,6 +16,11 @@
 
   > li {
     display: inline-block;
+
+    @if $is-oldie {
+      *display: inline; // IE7 doesn't understand inline-block other than on naturally inline elements
+      zoom: 1;
+    }
   }
 }
 
