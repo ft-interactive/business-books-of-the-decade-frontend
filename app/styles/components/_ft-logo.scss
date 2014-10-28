@@ -1,25 +1,16 @@
 .ft-logo {
   display: block;
   position: relative;
-  padding-bottom: percentage(33px/400px);
   opacity: .8;
   transition: .2s opacity ease-in;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 
   &:focus,
   &:hover {
     opacity: 1;
-  }
-  
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    background-image: url(/bower_components/o-ft-icons/svg/brand-ft-masthead.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
 }

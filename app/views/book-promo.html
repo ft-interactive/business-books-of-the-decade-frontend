@@ -1,7 +1,7 @@
 <div class="book-promo" itemscope itemtype="http://schema.org/Book">
     <a href="/books/{{ book.year }}/{{ book.rank }}/{{ book.slug }}" class="fauxlink">
         <div class="book-promo__prizes">
-            <i class="badge badge--{{ book.rank }}"></i>
+            <i class="badge badge--{{ book.rank|lower }}"></i>
             <span class="visuallyhidden">{{ book.rank|capitalize }}</span>
             {{ book.year }}
         </div>

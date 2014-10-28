@@ -39,8 +39,8 @@ h6 {
   margin-bottom: .5em;
 
   @include mq(tablet) {
-      margin-top: 1em;
-margin-bottom: .75em;
+    margin-top: 1em;
+    margin-bottom: .75em;
     font-size: 3em;
   }
 }

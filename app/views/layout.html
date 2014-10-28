@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="{% block description %}{% endblock %}">
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--#include virtual="/inc/extras-head-1.html" -->
@@ -17,11 +17,10 @@
         <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="styles/main.css">
         <!--<![endif]-->
-        <!-- endbuild -->
 
         <!--[if lte IE 8]>
-        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
-        <link rel="stylesheet" href="styles/oldie.css">
+        <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="/styles/oldie.css">
         <![endif]-->
 
         <script src="//cdn.polyfill.io/v1/polyfill.min.js"></script>
@@ -32,13 +31,15 @@
         <header class="header">
             <div class="top-bar">
                 <div class="container">
-                    <div class="header__logo"><a href="/" class="ft-logo"><span class="visuallyhidden">Financial Times</span></a></div>
+                    <div class="header__logo"><a href="/" class="ft-logo"><img src="images/brand-ft-masthead.png" alt="Financial Times" /></a></div>
                     <div class="js-filter-bar-toggle-placeholder"></div>
                 </div>
             </div>
-            <h1 class="microsite-name">
-                {{ site.name }}
-            </h1>
+            <a href="/" class="fauxlink">
+                <h1 class="microsite-name">
+                    {{ site.name }}
+                </h1>
+            </a>
         </header>
 
         <div class="filter-bar filter-bar--hidden clearfix js-filter-bar" id="filterbar">
@@ -84,12 +85,9 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-        <script src="scripts/vendor/tipuedrop/tipuedrop_content.js"></script>
 
         <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
-        <script src="scripts/vendor/tipuedrop/tipuedrop.js"></script>
-        <script src="bower_components/ondomready/ondomready.js"></script>
-        <script src="scripts/main-bundle.js"></script>
+        <script src="scripts/bottom.js"></script>
         <!-- endbuild -->
 
         <!--#include virtual="/inc/extras-foot-2.html" -->

@@ -1,6 +1,5 @@
 .top-bar {
-  @include oGridBoxSizing(border-box);
-  height: 50px;
+  height: 50px - 15px - 1px; // height - padding - border, because IE7 doesn't support box-sizing
   background: #fff9f1; // Not in Origami's Palette
   position: relative;
   padding: 15px 0 0;
