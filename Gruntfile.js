@@ -467,7 +467,7 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('dev', function (target) {
+    grunt.registerTask('dev', function () {
         grunt.task.run([
             'clean:server',
             'concurrent:server',
