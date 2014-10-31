@@ -1,11 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title -%}
-{% if page.title -%}
-{{ page.title }} (list) - 
-{%- endif %}
-{{ site.name }}
-{%- endblock %}
+{% block title %}{% if page.title %}{{ page.title }} (list) - {% endif %}{{ site.name }}{% endblock %}
 
 {% block content_primary %}
 
