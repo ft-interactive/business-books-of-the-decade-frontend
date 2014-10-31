@@ -10,7 +10,7 @@
     </div>
     <h1 class="book__title" itemprop="name">{{ book.title }}</h1>
     <div class="book__byline">
-        <a href="/authors/{{ book.author }}" class="text-quiet" itemprop="author">{{ book.author }}</a>
+        <span class="text-quiet" itemprop="author">{{ book.author }}</span>
     </div>
     <div class="book__prizes">
         <a href="{{ router.url('year', book) }}" class="text-quiet">
