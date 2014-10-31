@@ -23,6 +23,20 @@ module.exports = function (grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
+            views: {
+                files: [
+                    '<%= config.app %>/views/*.{html,js}'
+                ],
+                tasks: ['copy:themeJS','cdnify:devtheme']
+            },
+            styles: {
+                files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+                tasks: ['sass'],
+                options: {
+                    livereload: true,
+                    spawn: false
+                }
+            },
             js: {
                 files: [
                     '<%= config.app %>/scripts/**/*.js'
@@ -268,7 +282,18 @@ module.exports = function (grunt) {
                     cwd: '<%= config.app %>/views',
                     dest: '<%= config.dist %>',
                     src: [
-                        '*.html'
+                        '*.{js,html}'
+                    ]
+                }]
+            },
+            themeJS: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= config.app %>/views',
+                    dest: '.tmp/views',
+                    src: [
+                        '*.js'
                     ]
                 }]
             },
@@ -402,6 +427,17 @@ module.exports = function (grunt) {
             'clean:server',
             'concurrent:server',
             // 'autoprefixer',
+            'watch'
+        ]);
+    });
+
+    grunt.registerTask('dev', function (target) {
+        grunt.task.run([
+            'clean:server',
+            'concurrent:server',
+            'cdnify:devtheme',
+            'copy:themeJS',
+            'connect:livereload',
             'watch'
         ]);
     });
