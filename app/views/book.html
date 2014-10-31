@@ -3,9 +3,10 @@
 {% block title %}{{ book.title }} by {{ book.author }}{% endblock %}
 
 {% block content_primary %}
+
 <article class="book" itemscope itemtype="http://schema.org/Book">
     <div class="book__media">
-        <img itemprop="image" src="http://image.webservices.ft.com/v1/images/raw/http://interactivegraphics.ft-static.com/static/sites/2014/business-books-of-the-decade/covers/{{ book.cover }}?source=business_books_ofthe_decade&amp;width=400" alt="" />
+        <img itemprop="image" src="{{ book.cover | image_service(400) }}" alt="{{ book.title }} by {{ book.author }}" />
     </div>
     <h1 class="book__title" itemprop="name">{{ book.title }}</h1>
     <div class="book__byline">

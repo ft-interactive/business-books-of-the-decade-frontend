@@ -6,7 +6,7 @@
             {{ book.year }}
         </div>
         <div class="book-promo__media">
-            <img src="http://image.webservices.ft.com/v1/images/raw/http://interactivegraphics.ft-static.com/static/sites/2014/business-books-of-the-decade/covers/{{ book.cover }}?source=business_books_ofthe_decade&amp;width=200" alt="" itemprop="image" />
+            <img src="{{ book.cover | image_service(600) }}" alt="{{ book.title }} by {{ book.author }}" itemprop="image" />
         </div>
         <div class="book-promo__content">
             <h3 class="book-promo__title">
