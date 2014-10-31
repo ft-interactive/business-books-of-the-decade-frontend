@@ -76,8 +76,12 @@
                         <span class="filter-form__filter-by">filter by </span>category
                     </label>
                     <select name="category" id="filter" class="filter-form__select o-ft-forms__field--select js-filter-form-select">
-                        <option value="">Show all</option>
-                        <option value="comedy">Comedy</option>
+                        <option value="" {% if not category.slug %}selected{% endif %}>Show all</option>
+                        {% for category in categories %}
+                        <option value="{{ category.slug }}" {% if slug === category.slug %}selected{% endif %}>
+                            {{ category.name }}
+                        </option>
+                        {% endfor %}
                     </select>
                     <input type="submit" value="Submit" class="filter-form__submit visuallyhidden" />
                 </div>
