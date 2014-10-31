@@ -43,30 +43,56 @@ module.exports = function (grunt) {
                 ],
                 tasks: ['browserify:main'],
                 options: {
+                    livereload: true,
                     spawn: false
                 }
             },
             gruntfile: {
                 files: ['Gruntfile.js']
             },
-            styles: {
-                files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['sass'],
+            livereload: {
                 options: {
-                    spawn: false
-                }
+                    livereload: '<%= connect.options.livereload %>'
+                },
+                files: [
+                    ['<%= config.app %>/{,*/}*.html'],
+                    '.tmp/styles/{,*/}*.css',
+                    '.tmp/scripts/{,*/}*.js',
+                    '<%= config.app %>/images/{,*/}*'
+                ]
             }
         },
+
 
         // The actual grunt server settings
         connect: {
             options: {
                 port: 9000,
-                hostname: '0.0.0.0'
+                hostname: '0.0.0.0',
+                livereload: 35729,
             },
+
+            livereload: {
+                options: {
+                    open: true,
+                    middleware: [
+                        function (req, res, next) {
+                            if (req.url.substring(0, 18) === '/bower_components/') {
+                                connect.static(__dirname)(req, res, next);
+                            }
+                            else next();
+                        },
+                        connect.static('.tmp'),
+                        connect.static('app'),
+                        connect.directory('app')
+                    ]
+                }
+            },
+
             dist: {
                 options: {
                     open: true,
+                    livereload: false,
                     base: '<%= config.dist %>'
                 }
             }
@@ -323,8 +349,8 @@ module.exports = function (grunt) {
             themePublic: {
                 files: [{
                     expand: true,
-                    cwd: '.tmp/',
-                    src: ['images/**/*', 'scripts/**/*', 'styles/**/*'],
+                    cwd: '<%= config.dist %>',
+                    src: ['images/**/*', 'scripts/*', 'styles/*'],
                     dest: '<%= config.dist %>/public',
                     dot: true
                 }]
@@ -377,6 +403,17 @@ module.exports = function (grunt) {
                     base: '{{ site.staticBaseUrl }}'
                 }
             },
+            devtheme: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>/views',
+                    src: '**/*.html',
+                    dest: '.tmp/views'
+                }],
+                options: {
+                    base: '{{ site.staticBaseUrl }}'
+                }
+            },
             demo: {
                 files: [{
                     expand: true,
@@ -412,7 +449,6 @@ module.exports = function (grunt) {
                 'sass',
                 'copy:styles',
                 'copy:images'
-                
             ]
         }
     });
