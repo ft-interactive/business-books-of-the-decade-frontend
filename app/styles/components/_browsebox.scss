@@ -4,11 +4,4 @@
 }
 .browsebox__content {
   padding-top: 10px;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-  -moz-scrollbars-horizontal: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }

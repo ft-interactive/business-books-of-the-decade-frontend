@@ -4,17 +4,9 @@
 }
 .shelf__item {
   padding: 0 $gutter/2 1.5em;
-  width: 11em;
-  min-width: 11em;
-  max-width: 11em;
 }
 
 .shelf--small {
-  font-size: (3em/5);
-  
-  .shelf__item > * {
-    font-size: (1em/(3/5));
-  }
   .book-promo__prizes {
     @include visuallyhidden;
   }
