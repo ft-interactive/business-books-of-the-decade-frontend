@@ -5,9 +5,10 @@
 {% block content_primary %}
 
 {% spaceless %}
-    {% for year in books|groupBy('year') %}
-        <h2 class="section-title">{{ loop.key }}</h2>
-        {% for book in year %}
+
+    {% for group in groups %}
+        <h2 class="section-title">{{ group.name }}</h2>
+        {% for book in group.books %}
             {% if loop.first %}
             <ul class="shelf inline-list shelf--big text-center">
             {% endif %}
