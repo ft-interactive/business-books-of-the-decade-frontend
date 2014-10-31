@@ -3,9 +3,10 @@ $is-oldie: false !default;
 
 // Same thing but with mq()
 $mq-breakpoints: (
-  mobile:   320px,
-  tablet:   620px,
-  document: 980px
+  mobile:          320px,
+  mobileLandscape: 480px,
+  tablet:          620px,
+  document:        980px
 );
 
 $gutter: $o-grid-responsive-half-gutter * 2;
