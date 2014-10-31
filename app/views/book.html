@@ -68,25 +68,30 @@
 
 {% for category in relatedBooks %}
     {% for book in category.books %}
-        {% if loop.first %}
-        <div class="browsebox">
-            <div class="browsebox__header">
-                <a href="{{ router.url('category', category) }}" class="fauxlink">
-                    <h2 class="text-uppercase text-tiny text-quiet">Others in <span class="fauxlink__target">{{ category.name }}</span></h2>
-                </a>
+            {% if loop.first %}
+            <div class="browsebox">
+                <div class="browsebox__header">
+                    <a href="{{ router.url('category', category) }}" class="fauxlink">
+                        <h2 class="text-uppercase text-tiny text-quiet">Others in <span class="fauxlink__target">{{ category.name }}</span></h2>
+                    </a>
+                </div>
+                <nav class="browsebox__content">
+                    <ul class="shelf row-list row-list--thirds shelf--small">
+            {% endif %}
+                    {% if loop.index < 4 %}
+                        <li class="shelf__item">
+                            {% include "./book-promo.html" %}
+                        </li>
+                    {% endif %}
+            {% if loop.index == 3 %}
+                    </ul>
+                </nav>
             </div>
-            <nav class="browsebox__content">
-                <ul class="shelf row-list shelf--small">
-        {% endif %}
-                    <li class="shelf__item">
-                        {% include "./book-promo.html" %}
-                    </li>
-        {% if loop.last %}
-                </ul>
-            </nav>
-        </div>
         {% endif %}
     {% endfor %}
 {% endfor %}
+<div class="text-center">
+    <a href="{{ router.url('home') }}" class="o-ft-buttons o-ft-buttons--standout text-small">Show all books</a>
+</div>
 
 {% endblock %}

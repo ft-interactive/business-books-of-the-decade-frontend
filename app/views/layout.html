@@ -85,13 +85,13 @@
             <form class="filter-form js-filter-form" action="/" method="get">
                 <div class="filter-form__inner clearfix">
                     <label for="filter" class="filter-form__label text-quiet text-uppercase text-small">
-                        <span class="filter-form__filter-by">filter by </span>category
+                        Category
                     </label>
                     <select name="category" id="filter" class="filter-form__select o-ft-forms__field--select js-filter-form-select">
                         <option value="" {% if not category.slug %}selected{% endif %}>Show all</option>
                         {% for category in categories %}
                         <option value="{{ category.slug }}" {% if slug === category.slug %}selected{% endif %}>
-                            {{ category.name }}
+                            {{ category.name|capitalize }}
                         </option>
                         {% endfor %}
                     </select>

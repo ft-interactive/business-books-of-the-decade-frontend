@@ -7,12 +7,18 @@ $(document).ready(function() {
 
   var filterBar = $('.js-filter-bar');
 
-  $('.js-filter-bar-toggle').each(function(el) {
-    $(el).on('click', function(e) {
-      e.preventDefault();
-      filterBar.toggleClass('filter-bar--hidden');
-    });
+  $('.js-filter-bar-toggle').on('click', function(e) {
+    e.preventDefault();
+    filterBar.toggleClass('filter-bar--hidden');
   });
+
+  // Pre-select the correct category in the filter dropdown menu
+  var isCategory = window.location.pathname.split('/')[1] === 'categories';
+
+  if (isCategory) {
+    var currentCategory = window.location.pathname.split('/')[2];
+    $('.js-filter-form-select').find('option[value=' + currentCategory + ']').attr('selected', 'selected');
+  }
 
   // Prevent search form submission
   $('.js-search-form').on('submit', function(e) {
