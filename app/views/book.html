@@ -13,7 +13,7 @@
         <a href="/authors/{{ book.author }}" class="text-quiet" itemprop="author">{{ book.author }}</a>
     </div>
     <div class="book__prizes">
-        <a href="/books/{{ book.year }}" class="text-quiet">
+        <a href="{{ router.url('year', book) }}" class="text-quiet">
             <i class="badge badge--{{ book.rank|lower }}"></i>
             {{ book.rank }} {{ book.year }}
         </a>
@@ -23,7 +23,7 @@
             <dt class="meta__title">Categories</dt>
             {% for category in book.categories %}
             <dd class="meta__item text-quiet">
-                <a href="/categories/{{ category.slug }}" class="text-quiet" itemprop="genre">{{ category.name }}</a>{% if !loop.last %},{% endif %}
+                <a href="{{router.url('category', category) }}" class="text-quiet" itemprop="genre">{{ category.name }}</a>{% if !loop.last %},{% endif %}
             </dd>
             {% endfor %}
         </dl>
@@ -44,18 +44,19 @@
         <a href="{{ book.buyitnow }}" class="o-ft-buttons">Buy it now</a>
     </div>
     {% endif %}
+
 </article>
 
 <nav class="subnavigation">
     <ul class="row-list text-tiny">
         <li class="subnavigation__item subnavigation__item--1">
-            <a href="/books/{{ book.year }}" class="fauxlink subnavigation__action">
+            <a href="{{ router.url('year', book) }}" class="fauxlink subnavigation__action">
                 <div class="text-uppercase text-quiet">More in <span class="fauxlink__target">{{ book.year }}</span></div>
             </a>
         </li>
         <li class="subnavigation__item subnavigation__item--2">
-            <a href="#" class="subnavigation__action">
                 Poor economics
+            <a href="{{ router.url('book', nextBook) }}" class="subnavigation__action">
                 <br />
                 Abhijit Banerjee, Esther Duflo
             </a>
@@ -71,7 +72,7 @@
         {% if loop.first %}
         <div class="browsebox">
             <div class="browsebox__header">
-                <a href="/categories/{{ category.slug }}" class="fauxlink">
+                <a href="{{ router.url('category', category) }}" class="fauxlink">
                     <h2 class="text-uppercase text-tiny text-quiet">Others in <span class="fauxlink__target">{{ category.name }}</span></h2>
                 </a>
             </div>

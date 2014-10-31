@@ -48,11 +48,11 @@
         <header class="header">
             <div class="top-bar">
                 <div class="container">
-                    <div class="header__logo"><a href="/" class="ft-logo"><img src="images/brand-ft-masthead.png" alt="Financial Times" /></a></div>
+                    <div class="header__logo"><a href="{{ router.url('home') }}" class="ft-logo"><img src="images/brand-ft-masthead.png" alt="Financial Times" /></a></div>
                     <div class="js-filter-bar-toggle-placeholder"></div>
                 </div>
             </div>
-            <a href="/" class="fauxlink">
+            <a href="{{ router.url('home') }}" class="fauxlink">
                 <h1 class="microsite-name">
                     {{ site.name }}
                 </h1>
