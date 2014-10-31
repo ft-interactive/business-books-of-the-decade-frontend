@@ -7,9 +7,6 @@
         <meta name="description" content="{% block description %}{% endblock %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--#include virtual="/inc/extras-head-1.html" -->
-
-        <!--
             Serve a different stylesheet for IE8 :
             http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8
         -->
@@ -17,17 +14,21 @@
         <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="styles/main.css">
         <!--<![endif]-->
-
         <!--[if lte IE 8]>
         <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="/styles/oldie.css">
         <![endif]-->
-
         <script src="//cdn.polyfill.io/v1/polyfill.min.js"></script>
-
-        <!--#include virtual="/inc/extras-head-2.html" -->
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
+        {#
+        FT Tracking module 1.2.3.1 #}
+        <script src="http://s2.ft-static.com/scripts/392b9acc/bundles/tracking.js"></script>
+        <noscript>
+        <img alt="" border="0" width="1" height="1" src="http://track.ft.com/track/track.js?javascript=disabled"/>
+        <img alt="" border="0" width="1" height="1" src="http://stats.ft.com/si/track.gif?WT.js=No"/>
+        </noscript>
+
         <header class="header">
             <div class="top-bar">
                 <div class="container">
@@ -80,16 +81,65 @@
             </div>
         </div>
         
-
-        <!--#include virtual="/inc/extras-foot-1.html" -->
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
         <!-- build:js({.tmp,app,.}) scripts/bottom.js -->
         <script src="scripts/bottom.js"></script>
         <!-- endbuild -->
+        {#
 
-        <!--#include virtual="/inc/extras-foot-2.html" -->
+        Analytics #}
+        <script>
+            // IG Google Analytics
+            var _gaq = _gaq || [];
+            (function() {
+              
+              _gaq.push(['_setAccount', 'UA-35229645-1']);
+              _gaq.push(['_trackPageview']);
+              _gaq.push(['_setDomainName', 'ig.ft.com']);
+              _gaq.push(['_setCookiePath', '/']);
+
+              if (!!window['User'] && window.User.id) {  
+                _gaq.push(['_setCustomVar', 1, 'User', User.id, 1]);
+              }
+
+              if (window.analytics) {
+                window.analytics.timing = function timing(category, variable, time) {
+                  _gaq.push(['_trackTiming', category, variable,  time]);
+                };
+              }
+
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+
+            // Chartbeat
+            var _sf_async_config={};
+            /** CONFIGURATION START **/
+            _sf_async_config.uid = 14181;
+            _sf_async_config.domain = "ft.com";
+            _sf_async_config.useCanonical = true;
+            _sf_async_config.sections = "Books";
+            _sf_async_config.authors = "Interactive";
+            /** CONFIGURATION END **/
+            (function(){
+              function loadChartbeat() {
+                window._sf_endpt=(new Date()).getTime();
+                var e = document.createElement("script");
+                e.setAttribute("language", "javascript");
+                e.setAttribute("type", "text/javascript");
+                e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+                document.body.appendChild(e);
+              }
+              var oldonload = window.onload;
+              window.onload = (typeof window.onload != "function") ?
+              loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+
+        </script>
+
     </body>
 </html>
