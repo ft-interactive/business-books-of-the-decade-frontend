@@ -11,7 +11,7 @@
         </script>
         {#
         Chartbeat timer #}
-        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <script>var _sf_startpt=(new Date()).getTime()</script>
         <meta name="copyright" content="Financial Times">
         <meta name="robots" content="index,follow">
         <meta name="author" content="FT Interactive Graphics">
@@ -143,7 +143,7 @@
                 };
               }
 
-              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              var ga = document.createElement('script'); ga.async = true;
               ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
@@ -162,8 +162,6 @@
               function loadChartbeat() {
                 window._sf_endpt=(new Date()).getTime();
                 var e = document.createElement("script");
-                e.setAttribute("language", "javascript");
-                e.setAttribute("type", "text/javascript");
                 e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
                 document.body.appendChild(e);
               }
