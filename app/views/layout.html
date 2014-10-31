@@ -6,10 +6,26 @@
         <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="{% block description %}{% endblock %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {#
+        Chartbeat timer #}
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <meta name="copyright" content="Financial Times">
+        <meta name="robots" content="index,follow">
+        <meta name="author" content="FT Interactive Graphics">
+        {#
+        FB/OpenGraph #}
+        <meta property="og:site_name" content="Financial Times"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:image" content="http://im.ft-static.com/m/img/social/og-ft-logo.png"/>
+        <meta property="fb:page_id" content="8860325749" />
+        {#
+        google plus #}
+        <link href="https://plus.google.com/113457471429583444041/" rel="publisher" />
 
+        <meta name="format-detection" content="telephone=no" />
+        {#
             Serve a different stylesheet for IE8 :
-            http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8
-        -->
+        http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8 #}
         <!--[if gt IE 8]><!-->
         <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
         <link rel="stylesheet" href="styles/main.css">
