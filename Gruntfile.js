@@ -459,7 +459,8 @@ module.exports = function (grunt) {
                 'browserify:main',
                 'sass',
                 'copy:styles',
-                'copy:images'
+                'imagemin',
+                'svgmin'
             ]
         }
     });
