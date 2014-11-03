@@ -312,6 +312,17 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            bowerAssets: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/',
+                    dest: '<%= config.dist %>/public/bower_components/',
+                    src: [
+                        '**/*.{jpg,jpeg,svg,gif,webp,png}'
+                    ]
+                }]
+            },
             distViews2: {
                 files: [{
                     expand: true,
@@ -506,6 +517,7 @@ module.exports = function (grunt) {
         'cdnify:theme',
         'copy:distViews2',
         'copy:themePublic',
+        'copy:bowerAssets',
         'clean:theme'
     ]);
 
