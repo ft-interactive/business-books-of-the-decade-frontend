@@ -2,7 +2,7 @@
   "name": "business-books-of-the-decade-frontend",
   "private": true,
   "version": "0.0.1",
-  "dependencies": {
+  "devDependencies": {
     "debowerify": "~0.8.1",
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~1.0.1",
