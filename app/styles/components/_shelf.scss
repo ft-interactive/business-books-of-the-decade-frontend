@@ -4,7 +4,7 @@
   box-sizing: border-box;
 
   @include mq(mobileLandscape) {
-    width: 33%;
+    width:  33.3333333333333%;
   }
   @include mq(tablet) {
     width: 25%;
@@ -38,7 +38,15 @@
   }
 }
 .shelf--big {
+  @include mq(mobileLandscape) {
+    .shelf__item {
+      width: 50%;
+    }
+  }
   @include mq(tablet) {
+    .shelf__item {
+      width: 33.3333333333333%;
+    }
     &,
     .shelf__item > * {
       font-size: 1em;

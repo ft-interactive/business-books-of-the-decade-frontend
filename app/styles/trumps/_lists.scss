@@ -23,6 +23,12 @@
     }
   }
 }
+.inline-list--spaced {
+  > li {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
+}
 
 .row-list {
   @extend %unstyled-list;

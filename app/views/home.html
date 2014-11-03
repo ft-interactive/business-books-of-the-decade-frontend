@@ -7,7 +7,25 @@
 {% spaceless %}
 
     {% if winners and winners.length %}
+        <div class="text-center">
+            <ul class="inline-list inline-list--spaced">
+                <li>
+                    <i class="badge badge--winner"></i>
+                    Winner
+                </li>
+                <li>
+                    <i class="badge badge--shortlist"></i>
+                    Short listed
+                </li>
+                <li>
+                    <i class="badge badge--longlist"></i>
+                    Long listed
+                </li>
+            </ul>
+        </div>
+
         <h2 class="section-title">The Winners</h2>
+        {% spaceless %}
         {% for book in winners %}
             {% if loop.first %}
             <ul class="shelf inline-list shelf--big text-center">
@@ -19,13 +37,15 @@
             </ul>
             {% endif %}
         {% endfor %}
+        {% endspaceless %}
     {% endif %}
 
     {% for group in groups %}
         <h2 class="section-title js-category-name">{{ group.name|capitalize }}</h2>
         {% for book in group.books %}
+            {% spaceless %}
             {% if loop.first %}
-            <ul class="shelf inline-list shelf--big text-center">
+            <ul class="shelf inline-list shelf--medium text-center">
             {% endif %}
                 <li class="shelf__item">
                     {% include "./book-promo.html" %}
@@ -33,6 +53,7 @@
             {% if loop.last %}
             </ul>
             {% endif %}
+            {% endspaceless %}
         {% endfor %}
     {% endfor %}
 {% endspaceless %}
