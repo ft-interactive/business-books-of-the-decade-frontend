@@ -33,6 +33,8 @@
 .row-list {
   @extend %unstyled-list;
   table-layout: fixed;
+  display: table;
+  width: 100%;
 
   > li {
     display: table-cell;
