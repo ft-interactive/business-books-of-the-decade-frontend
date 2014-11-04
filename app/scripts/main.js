@@ -30,5 +30,8 @@ $(document).ready(function() {
     $('.js-filter-form').submit();
   });
 
-  $('.js-tipue-drop').tipuedrop();
+  $('.js-tipue-drop').tipuedrop({
+    mode: 'json',
+    contentLocation: '/v1/books'
+  });
 });

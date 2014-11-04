@@ -8,9 +8,12 @@ http://www.tipue.com/drop
 
 
 (function($) {
-    'use strict';
-    $.fn.tipuedrop = function(options) {
-          var tipuedrop = window.tipuedrop || {};
+
+  'use strict';
+
+  $.fn.tipuedrop = function(options) {
+    
+    var tipuedrop = window.tipuedrop || {};
 
     var set = $.extend({
       'show'            : 3,
@@ -24,14 +27,11 @@ http://www.tipue.com/drop
       var tipuedrop_in = {
         pages: []
       };
-      $.ajaxSetup({
-        async: false
-      });
 
       if (set.mode === 'json') {
         $.getJSON(set.contentLocation,
           function(json) {
-            tipuedrop_in = $.extend({}, json);
+            tipuedrop_in.pages = json;
           }
         );
       }
@@ -44,18 +44,26 @@ http://www.tipue.com/drop
       });
 
       function getTipuedrop($obj) {
-        if ($obj.val()) {
-          var c = 0,
-              out;
-          for (var i = 0; i < tipuedrop_in.pages.length; i++) {
-            var pat = new RegExp($obj.val(), 'i');
 
-            if ((tipuedrop_in.pages[i].title.search(pat) !== -1 || tipuedrop_in.pages[i].author.search(pat) !== -1 || tipuedrop_in.pages[i].year.search(pat) !== -1) && c < set.show) {
+        if ($obj.val()) {
+
+          var c = 0,
+              out,
+              pat = new RegExp($obj.val(), 'i'),
+              book;
+
+          for (var i = 0; i < tipuedrop_in.pages.length; i++) {
+            book = tipuedrop_in.pages[i];
+            if ((book.title.search(pat) !== -1 || book.author.search(pat) !== -1 || book.year.toString().search(pat) !== -1) && c < set.show) {
               if (c === 0) {
                 out = '<div id="tipue_drop_wrapper"><div class="tipue_drop_head"><div id="tipue_drop_head_text">Suggested results</div></div>';
               }
-              out += '<a href="/books/' + tipuedrop_in.pages[i].year + '/' + tipuedrop_in.pages[i].rank + '/' + tipuedrop_in.pages[i].slug + '"';
-              out += '><div class="tipue_drop_item"><div class="tipue_drop_left"><img src="http://image.webservices.ft.com/v1/images/raw/http://interactivegraphics.ft-static.com/static/sites/2014/business-books-of-the-decade/covers/' + tipuedrop_in.pages[i].cover + '?source=business_books_ofthe_decade&amp;width=120" class="tipue_drop_image" alt=""></div><div class="tipue_drop_right"><div class="tipue_drop_right_title">' + tipuedrop_in.pages[i].title + '</div><div class="tipue_drop_right_text">' + tipuedrop_in.pages[i].author + '<br />' + tipuedrop_in.pages[i].year + '</div></div></div></a>';
+              out += '<a href="/books/' + book.year + '/' + book.rank + '/' + book.slug + '"';
+              out += '><div class="tipue_drop_item"><div class="tipue_drop_left">';
+              out += '<img src="http://image.webservices.ft.com/v1/images/raw/' + book.cover;
+              out += '?source=ig_business_books_ofthe_decade&amp;width=120" class="tipue_drop_image" alt=""></div>';
+              out += '<div class="tipue_drop_right"><div class="tipue_drop_right_title">' + book.title + '</div>';
+              out += '<div class="tipue_drop_right_text">' + book.author + '<br />' + book.year + '</div></div></div></a>';
               c++;
             }
           }
