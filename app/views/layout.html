@@ -8,6 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
             document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, 'js');
+            window.searchOptions = {
+                mode: 'json',
+                contentLocation: '{{ site.baseUrl }}/v1/books?filter=title,author,year,cover,rank,slug',
+                route: function(book) {
+                    return '{{ site.baseUrl }}/books/' + book.year + '/' + book.rank + '/' + book.slug;
+                }
+            };
         </script>
         {#
         Chartbeat timer #}

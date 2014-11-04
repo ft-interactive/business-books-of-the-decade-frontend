@@ -16,10 +16,13 @@ http://www.tipue.com/drop
     var tipuedrop = window.tipuedrop || {};
 
     var set = $.extend({
-      'show'            : 3,
-      'speed'           : 300,
-      'mode'            : 'static',
-      'contentLocation' : 'tipuedrop/tipuedrop_content.json'
+      show            : 3,
+      speed           : 300,
+      mode            : 'static',
+      contentLocation : 'tipuedrop/tipuedrop_content.json',
+      route: function(book) {
+        return '/books/' + book.year + '/' + book.rank + '/' + book.slug;
+      }
     }, options);
 
     return this.each(function() {
@@ -58,7 +61,7 @@ http://www.tipue.com/drop
               if (c === 0) {
                 out = '<div id="tipue_drop_wrapper"><div class="tipue_drop_head"><div id="tipue_drop_head_text">Suggested results</div></div>';
               }
-              out += '<a href="/books/' + book.year + '/' + book.rank + '/' + book.slug + '"';
+              out += '<a href="' + set.route(book) + '"';
               out += '><div class="tipue_drop_item"><div class="tipue_drop_left">';
               out += '<img src="http://image.webservices.ft.com/v1/images/raw/' + book.cover;
               out += '?source=ig_business_books_ofthe_decade&amp;width=120" class="tipue_drop_image" alt=""></div>';
