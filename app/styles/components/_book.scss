@@ -10,8 +10,9 @@
   }
 }
 .book__title {
-  margin-bottom: .2em;
+  //margin-bottom: .2em;
   line-height: 1.375;
+  font-weight: bold;
   font-size: 1em;
 
   @include mq(tablet) {
@@ -28,6 +29,7 @@
 }
 .book__prizes {
   font-size: 0.8125em;
+  font-weight: bold;
 
   @include mq(tablet) {
     font-size: 1em;
