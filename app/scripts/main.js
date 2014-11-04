@@ -32,6 +32,6 @@ $(document).ready(function() {
 
   $('.js-tipue-drop').tipuedrop({
     mode: 'json',
-    contentLocation: '/v1/books'
+    contentLocation: '/v1/books?filter=title,author,year,cover,rank,slug'
   });
 });
