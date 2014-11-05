@@ -41,7 +41,7 @@
     {% endif %}
 
     {% for group in groups %}
-        <h2 class="section-title js-category-name">{{ group.name }}</h2>
+        <h2 class="section-title js-category-name" id="{{ group.slug }}">{{ group.name }}</h2>
         {% for book in group.books %}
             {% spaceless %}
             {% if loop.first %}
