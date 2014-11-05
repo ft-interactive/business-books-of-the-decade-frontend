@@ -98,7 +98,7 @@
                         <option value="" {% if not category.slug %}selected{% endif %}>Show all</option>
                         {% for category in categories %}
                         <option value="{{ category.slug }}" {% if slug === category.slug %}selected{% endif %}>
-                            {{ category.name|capitalize }}
+                            {{ category.name }}
                         </option>
                         {% endfor %}
                     </select>
