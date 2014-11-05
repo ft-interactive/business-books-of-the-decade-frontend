@@ -18,7 +18,7 @@
             {{ book.rank }} {{ book.year }}
         </a>
     </div>
-    <div class="book__meta">
+    <div class="book__meta" id="categories">
         <dl class="meta">
             <dt class="meta__title">Categories</dt>
             {% for category in book.categories %}
@@ -30,7 +30,7 @@
     </div>
     <div class="clear"></div>
     <div class="book__content">
-        <div class="book__synopsis content-block">
+        <div class="book__synopsis content-block" id="synopsis">
             <h2 class="headline content-block__headline">Synopsis</h2>
             {{ book.synopsis }}
         </div>
@@ -69,7 +69,7 @@
 {% for category in relatedBooks %}
     {% for book in category.books %}
             {% if loop.first %}
-            <div class="browsebox">
+            <div class="browsebox" id="{{ category.slug }}">
                 <div class="browsebox__header">
                     <a href="{{ router.url('category', category) }}" class="fauxlink">
                         <h2 class="text-uppercase text-tiny text-quiet">Others in <span class="fauxlink__target">{{ category.name }}</span></h2>

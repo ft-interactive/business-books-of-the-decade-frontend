@@ -24,13 +24,13 @@
             </ul>
         </div>
 
-        <h2 class="section-title">The Winners</h2>
+        <h2 class="section-title" id="winners">The Winners</h2>
         {% spaceless %}
         {% for book in winners %}
             {% if loop.first %}
             <ul class="shelf inline-list shelf--big text-center">
             {% endif %}
-                <li class="shelf__item">
+                <li class="shelf__item" id="winner-{{ book.year }}">
                     {% include "./book-promo.html" %}
                 </li>
             {% if loop.last %}
