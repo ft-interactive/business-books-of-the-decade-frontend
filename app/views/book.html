@@ -23,7 +23,7 @@
             <dt class="meta__title">Categories</dt>
             {% for category in book.categories %}
             <dd class="meta__item text-quiet">
-                <a href="{{router.url('category', category) }}" class="text-quiet" itemprop="genre">{{ category.name }}</a>{% if !loop.last %},{% endif %}
+                <a href="{{router.url('category', category) }}" class="text-quiet" itemprop="genre">{{ category.name }}</a>{% if !loop.last %}, {% endif %}
             </dd>
             {% endfor %}
         </dl>
