@@ -23,6 +23,10 @@
     padding-right: $gutter*.75;
     position: static;
   }
+
+  @include mq(document) {
+    max-width: 1060px;
+  }
 }
 .filter-bar--hidden {
   display: none;

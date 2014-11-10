@@ -61,6 +61,7 @@ h6 {
 .section-title {
   max-width: 500px;
   margin: 1em auto .5em;
+  padding-bottom: 0.125em;
   border-bottom: 1px solid oColorsGetPaletteColor(grey-tint1);
   font-family: oFontsGetFontFamilyWithFallbacks(BentonSans);
   font-weight: lighter;

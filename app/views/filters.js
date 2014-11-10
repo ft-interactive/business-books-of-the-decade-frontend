@@ -15,3 +15,7 @@ exports.image_service = function (input, width, height) {
 
   return 'http://image.webservices.ft.com/v1/images/raw/' + input + '?' + qs.stringify(args, '&amp;');
 };
+
+exports.slice = function(input, a, b) {
+  return !b ? input.slice(a || 0) : input.slice(a, b);
+};

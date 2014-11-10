@@ -1,5 +1,6 @@
 .subnavigation {
   padding: 5px $gutter/2;
+  margin-top: 2.1em;
   margin-left: -$gutter/2;
   margin-right: -$gutter/2;
   background: oColorsGetColorFor(box, background);
@@ -7,10 +8,11 @@
   
   @include mq(tablet) {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2.1em auto;
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
 }
 .subnavigation__item {
   

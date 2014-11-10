@@ -9,6 +9,9 @@
   @include mq(tablet) {
     width: 25%;
   }
+  @include mq(document) {
+    width: 14.285714%;
+  }
 }
 
 .shelf--small {
@@ -50,6 +53,11 @@
     &,
     .shelf__item > * {
       font-size: 1em;
+    }
+  }
+  @include mq(document) {
+    .shelf__item {
+      width: 20%;
     }
   }
 }

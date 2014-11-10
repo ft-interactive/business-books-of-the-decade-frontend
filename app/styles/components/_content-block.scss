@@ -7,3 +7,10 @@
     margin-left: -16px;
   }
 }
+
+
+@include mq(document) {
+  .content-block {
+    margin-left: 80px;
+  }
+}
