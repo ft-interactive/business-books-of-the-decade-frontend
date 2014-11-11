@@ -12,14 +12,6 @@ $(document).ready(function() {
     filterBar.toggleClass('filter-bar--hidden');
   });
 
-  // Pre-select the correct category in the filter dropdown menu
-  var isCategory = window.location.pathname.split('/')[1] === 'categories';
-
-  if (isCategory) {
-    var currentCategory = window.location.pathname.split('/')[2];
-    $('.js-filter-form-select').find('option[value=' + currentCategory + ']').attr('selected', 'selected');
-  }
-
   // Prevent search form submission
   $('.js-search-form').on('submit', function(e) {
     e.preventDefault();
