@@ -88,7 +88,10 @@
                         Category
                     </label>
                     <select name="category" id="filter" class="filter-form__select o-ft-forms__field--select js-filter-form-select">
-                        <option value="" {% if not category.slug %}selected{% endif %}>Show all</option>
+                        {% if book.slug %}
+                        <option style="display:none;visibility:hidden;" value="_" selected>Show all</option>
+                        {% endif %}
+                        <option value="" {% if not book.slug and not category.slug %}selected{% endif %}>Show all</option>
                         {% for category in categories %}
                         <option value="{{ category.slug }}" {% if slug === category.slug %}selected{% endif %}>
                             {{ category.name }}
