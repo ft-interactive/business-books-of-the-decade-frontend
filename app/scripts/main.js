@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
   'use strict';
   require('fastclick')(document.body); // github.com/ftlabs/fastclick
 
